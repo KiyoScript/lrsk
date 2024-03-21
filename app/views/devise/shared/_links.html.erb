@@ -1,0 +1,42 @@
+<%- if controller_name == 'passwords' %>
+  <p class="text-decoration-none mt-2 ms-3 text-normal">
+    Don’t have an account yet?
+    <%= link_to "Create an Account!", new_registration_path(resource_name), class: 'mt-2 text-normal' %>
+  </p>
+<% end %>
+
+<%- if controller_name != 'sessions' && controller_name != 'passwords'%>
+  <%= link_to "Forgot Password?", new_password_path(resource_name), class: 'text-decoration-none text-normal' %>
+<% end %>
+
+<%- if controller_name != 'sessions' %>
+  <p class="text-decoration-none mt-2 ms-3 text-normal">
+    Already have an account?
+    <%= link_to "Sign in here", new_session_path(resource_name), class: 'mt-2 text-primary' %><br />
+  </p>
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot Password?", new_password_path(resource_name), class: 'text-decoration-none text-normal' %>
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' && controller_name != 'passwords'%>
+  <p class="text-decoration-none mt-2 ms-3 text-normal">
+      Don’t have an account yet?
+    <%= link_to "Sign up here", new_registration_path(resource_name), class: 'mt-2 text-normal' %>
+  </p>
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
+  <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+<% if flash.any? %>
+  <div data-controller="flash">
+    <% if flash[:success] || flash[:notice] %>
+      <span data-flash-target="flashMessage" class="position-fixed top-0 end-0 m-3 alert alert-success d-flex align-items-center">
+        <%= flash[:success] || flash[:notice] %>
+      </span>
+    <% end %>
+    <% if flash[:info] %>
+      <span data-flash-target="flashMessage" class="position-fixed top-0 end-0 m-3 alert alert-info d-flex align-items-center">
+        <%= flash[:info] %>
+      </span>
+    <% end %>
+    <% if flash[:alert] || flash[:danger] || flash[:error] %>
+      <span data-flash-target="flashMessage" class="position-fixed top-0 end-0 m-3 alert alert-danger d-flex align-items-center">
+        <%= flash[:alert] || flash[:danger] || flash[:error]&.html_safe %>
+      </span>
+    <% end %>
+  </div>
+<% end %>
