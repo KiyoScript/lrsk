@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lrks</title>
+    <title>Linao Record Keeping</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "jet-plugins.bundle", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-disabled">
     <%= render partial: 'layouts/common/flash_message'%>
-    <%= yield %>
+    <div class="d-flex flex-column flex-root">
+      <div class="page d-flex flex-row flex-column-fluid">
+        <%= render partial: "layouts/common/sidebar" if user_signed_in? %>
+        <div id="kt_wrapper" class="wrapper d-flex flex-column flex-row-fluid">
+          <%= render partial: "layouts/common/navbar" if user_signed_in? %>
+          <div id="kt_content" class="content d-flex flex-column flex-column-fluid pt-0 p-8">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'jet-plugins.bundle.js', 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag 'jet.bundle.js', 'data-turbo-track': 'reload' %>
   </body>
 </html>
