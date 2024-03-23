@@ -26,3 +26,12 @@ User.create!(
   password: "123123123",
   password_confirmation: "123123123"
 )
+
+Patient.create!(
+  fullname: 'Arnel Jocosol',
+  birthdate: DateTime.now,
+  age: 20,
+  gender: 'male',
+  details: { address: 'Brgy. Linao' },
+  user_id: 1
+)

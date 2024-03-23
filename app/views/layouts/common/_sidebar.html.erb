@@ -20,6 +20,11 @@
             </span>
           <% end %>
         <% end %>
+         <%= link_to dashboard_patients_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
+            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="patient">
+              <%= bootstrap_icon 'person-lines-fill', width: '40' %>
+            </span>
+          <% end %>
       </div>
     </div>
     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto">

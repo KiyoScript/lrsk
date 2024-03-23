@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fullname: MyString
+  birthdate: 2024-03-24
+  age: 1
+  gender: 1
+  details: 
+  user: one
+
+two:
+  fullname: MyString
+  birthdate: 2024-03-24
+  age: 1
+  gender: 1
+  details: 
+  user: two

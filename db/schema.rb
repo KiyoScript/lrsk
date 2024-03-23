@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_23_060400) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_23_215555) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,42 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_060400) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "consults", force: :cascade do |t|
+    t.date "date"
+    t.time "time"
+    t.text "reason"
+    t.text "s"
+    t.string "blood_pressure"
+    t.integer "heart_rate"
+    t.text "rr"
+    t.float "temperature"
+    t.string "spo_2"
+    t.float "weight"
+    t.float "height"
+    t.float "bmi"
+    t.text "o"
+    t.text "a"
+    t.text "p"
+    t.integer "patient_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_consults_on_patient_id"
+    t.index ["user_id"], name: "index_consults_on_user_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "fullname"
+    t.date "birthdate"
+    t.integer "age"
+    t.integer "gender"
+    t.json "details"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_patients_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,4 +93,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_060400) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "consults", "patients"
+  add_foreign_key "consults", "users"
+  add_foreign_key "patients", "users"
 end
