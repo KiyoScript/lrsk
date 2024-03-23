@@ -15,9 +15,9 @@
       <span><%= staff.email %></span>
     </div>
   </td>
-  <td> <%= staff.role %> </td>
+  <td> <%= role_badge(staff.role) %></td>
   <td>
-    <div class="badge badge-light fw-bolder"><%= staff.gender %></div>
+    <%= gender_badge(staff.gender) %>
   </td>
   <td> <%= format_datetime(staff.created_at) %> </td>
   <td class="text-end">

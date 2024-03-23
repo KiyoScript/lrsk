@@ -7,7 +7,7 @@
             <%= render partial: "dashboard/staffs/form/change_avatar", locals: { staff: staff } %>
             <p class="fs-3 text-gray-800 text-hover-primary fw-bolder mb-3"><%= staff.lastname %></p>
             <div class="mb-9">
-              <div class="badge badge-lg badge-light-primary d-inline"><%= staff.role %></div>
+              <%= role_badge(staff.role) %>
             </div>
 
             <div class="fw-bolder mb-3">

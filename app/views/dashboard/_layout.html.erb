@@ -7,7 +7,7 @@
             <%= render "dashboard/profile/form/change_avatar" %>
             <p class="fs-3 text-gray-800 text-hover-primary fw-bolder mb-3"><%= current_user.lastname %></p>
             <div class="mb-9">
-              <div class="badge badge-lg badge-light-primary d-inline"><%= current_user.role %></div>
+              <%= role_badge(current_user.role) %>
             </div>
 
             <div class="fw-bolder mb-3">

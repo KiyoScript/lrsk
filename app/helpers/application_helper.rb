@@ -1,6 +1,28 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  ROLE_BADGE_CLASS = {
+    "unregistered" => "badge badge-light",
+    "staff" => "badge badge-light-info",
+    "administrator" => "badge badge-light-success"
+  }.freeze
+
+  GENDER_BADGE_CLASS = {
+    "prefer_not_to_answer" => "badge badge-light",
+    "female" => "badge badge-light-warning",
+    "male" => "badge badge-light-primary"
+  }.freeze
+
+  def role_badge(role)
+    badge_class = ROLE_BADGE_CLASS[role] || ROLE_BADGE_CLASS["unregistered"]
+    content_tag(:span, role.capitalize, class: badge_class)
+  end
+
+  def gender_badge(gender)
+    badge_class = GENDER_BADGE_CLASS[gender] || GENDER_BADGE_CLASS["prefer_not_to_answer"]
+    content_tag(:span, gender.capitalize, class: badge_class)
+  end
+
 
   def full_name(user)
     user.firstname + " " + user.lastname
