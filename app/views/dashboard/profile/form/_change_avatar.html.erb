@@ -1,0 +1,20 @@
+<div class="py-3" data-controller="dashboard--change-avatar">
+  <div class="profile-picture mx-auto rounded-circle" style="background-image: url('<%= url_for(profile_picture) %>');" data-dashboard--change-avatar-target="avatar">
+    <%= link_to "#", class: "edit-icon bg-white", data: { action: "click->dashboard--change-avatar#showFiles" } do %>
+      <%= bootstrap_icon 'pencil', class: 'text-warning' %>
+    <% end %>
+  </div>
+  <div class="profile-picture mx-auto rounded-circle d-none" style="background-image:url('');" data-dashboard--change-avatar-target="newAvatar">
+    <%= link_to "#", class: "edit-icon bg-white", data: { action: "click->dashboard--change-avatar#showFiles" } do %>
+      <%= bootstrap_icon 'pencil', class: 'text-warning' %>
+    <% end %>
+  </div>
+  <%= form_with url: dashboard_profile_path(current_user.id), model: current_user, data: { turbo_method: :patch, "dashboard--change-avatar-target": "form" }, class: "px-5 pt-3 d-none" do |f| %>
+    <%= f.label :avatar, class: "form-label d-none" %>
+    <%= f.file_field :avatar, accept: 'image/jpeg, image/png, image/jpg', class: "formcontrol form-control-sm", data: { action: "change->dashboard--change-avatar#uploadImage" } %>
+    <div class="pt-3 d-none">
+      <%= button_tag "Cancel", class: "btn btn-light btn-sm px-4", type: "reset", data: { action: "click->dashboard--change-avatar#resetForm", "dashboard--change-avatar-target": "cancel" } %>
+      <%= f.submit "Save", class: "btn btn-success btn-sm px-4", data: { "dashboard--change-avatar-target": "submit" } %>
+    </div>
+  <% end %>
+ </div>

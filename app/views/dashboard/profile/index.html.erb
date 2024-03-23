@@ -1,0 +1,27 @@
+<%= render layout: "dashboard/layout" do %>
+  <div class="px-sm-3">
+    <ul class="nav nav-pills mb-3 gap-2 flex-row flex-nowrap overflow-auto py-2 style='overflow-y: hidden !important;'" id="pills-tab" role="tablist" >
+      <li class="nav-item" role="presentation">
+        <button class="nav-link  <%= params[:tab] == "settings" ? '' : 'active' %> " id="pills-details-tab" data-bs-toggle="pill" data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details" aria-selected="false">Details</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-truncate" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security" aria-selected="false">Security</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-truncate <%= params[:tab] == "settings" ? 'active' : ''%>" id="pills-settings-tab" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button" role="tab" aria-controls="pills-settings" aria-selected="false">Account Settings</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade <%= params[:tab] == "settings" ? ' ' : 'show active'%> " id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab" tabindex="0">
+        <%= render partial: "dashboard/profile/form/profile_details" %>
+      </div>
+      <div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab" tabindex="0">
+        <%= render partial: "dashboard/profile/form/password_security" %>
+      </div>
+      <div class="tab-pane fade <%= params[:tab] == "settings" ? 'show active' : ''%>" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab" tabindex="0">
+        <%= render partial: "dashboard/profile/form/account_deletion" %>
+      </div>
+    </div>
+    <hr class="mt-5 mb-4">
+  </div>
+<% end %>

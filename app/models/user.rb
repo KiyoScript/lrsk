@@ -5,5 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  enum role: { unregistered: 0, staff: 1, admin: 2 }
+  has_one_attached :avatar, dependent: :destroy
+
+  enum role: { unregistered: 0, staff: 1, administrator: 2 }
+  enum gender: { prefer_not_answer: 0, female: 1, male: 2 }
+
+  def self.ransackable_attributes(auth_object = nil)
+    [ "lastname", "firstname", "email", "gender", "role"]
+  end
+  
 end

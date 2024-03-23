@@ -71,5 +71,6 @@ gem 'sassc-rails'
 gem 'bootstrap', '~> 5.3'
 gem 'bootstrap-icons-helper'
 gem 'devise', '~> 4.9'
-
-gem "dockerfile-rails", ">= 1.6", :group => :development
+gem 'ransack'
+gem 'pagy'
+gem 'dockerfile-rails', '>= 1.6', :group => :development

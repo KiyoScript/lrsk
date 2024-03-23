@@ -13,11 +13,13 @@
     </div>
     <div class="aside-nav d-flex flex-column flex-lg-center justify-content-start flex-column-fluid w-100 pb-5 px-3">
       <div class="menu-item py-2">
-        <a class="menu-link text-hover-primary" href="#">
-          <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Users">
-            <%= bootstrap_icon 'people-fill', width: '40' %>
-          </span>
-        </a>
+        <% if current_user.administrator? %>
+          <%= link_to dashboard_staffs_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
+            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="staffs">
+              <%= bootstrap_icon 'people-fill', width: '40' %>
+            </span>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto">
