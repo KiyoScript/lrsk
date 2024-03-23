@@ -1,6 +1,6 @@
 class Dashboard::StaffsController < ApplicationController
   include AdminAccessible
-  before_action :set_user, only: %i[show update destroy]
+  before_action :set_user
 
   def index
     @filtered_users = User.ransack(params[:q])
@@ -9,6 +9,8 @@ class Dashboard::StaffsController < ApplicationController
 
 
   def show; end
+
+  def edit;end
 
   def update
     respond_to do |format|

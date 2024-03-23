@@ -2,6 +2,10 @@ module ApplicationHelper
   include Pagy::Frontend
 
 
+  def full_name(user)
+    user.firstname + " " + user.lastname
+  end
+
   def profile_picture
     if current_user.avatar.presence
       current_user.avatar

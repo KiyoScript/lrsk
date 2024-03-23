@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     resources :profile, only: %i[index update destroy]
-    resources :staffs, except: %i[edit]
+    resources :staffs
   end
 
   root to: 'home#index'

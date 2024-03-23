@@ -17,7 +17,7 @@
         <%= render partial: "layouts/common/sidebar" if user_signed_in? %>
         <div id="kt_wrapper" class="wrapper d-flex flex-column flex-row-fluid">
           <%= render partial: "layouts/common/navbar" if user_signed_in? %>
-          <%= render partial: 'layouts/common/flash_message'%>
+          <%= render partial: 'layouts/common/sweet_alert_message'%>
           <div id="kt_content" class="content d-flex flex-column flex-column-fluid pt-0 p-8">
             <%= yield %>
           </div>

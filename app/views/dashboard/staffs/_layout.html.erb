@@ -4,10 +4,10 @@
       <div class="card mb-5 mb-xl-8">
         <div class="card-body">
           <div class="d-flex flex-center flex-column py-5">
-            <%= render "dashboard/profile/form/change_avatar" %>
-            <p class="fs-3 text-gray-800 text-hover-primary fw-bolder mb-3"><%= current_user.lastname %></p>
+            <%= render partial: "dashboard/staffs/form/change_avatar", locals: { staff: staff } %>
+            <p class="fs-3 text-gray-800 text-hover-primary fw-bolder mb-3"><%= staff.lastname %></p>
             <div class="mb-9">
-              <div class="badge badge-lg badge-light-primary d-inline"><%= current_user.role %></div>
+              <div class="badge badge-lg badge-light-primary d-inline"><%= staff.role %></div>
             </div>
 
             <div class="fw-bolder mb-3">
@@ -52,33 +52,6 @@
                 </div>
                 <div class="fw-bold text-muted">Staffs</div>
               </div>
-            </div>
-          </div>
-
-          <div class="d-flex flex-stack fs-4 py-3">
-            <div class="fw-bolder rotate collapsible" data-bs-toggle="collapse" href="#kt_user_view_details" role="button" aria-expanded="false" aria-controls="kt_user_view_details">
-              Overview
-              <span class="ms-2 rotate-180">
-              <span class="svg-icon svg-icon-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              </span>
-            </div>
-          </div>
-          <div class="separator"></div>
-          <div id="kt_user_view_details" class="collapse show">
-            <div class="pb-5 fs-6 text-start">
-               <div class="fw-bolder mt-5">Position</div>
-                <div class="text-gray-600"><%= current_user.role %></div>
-                <div class="fw-bolder mt-5">Firstname</div>
-                <div class="text-gray-600"><%= current_user.firstname %></div>
-                <div class="fw-bolder mt-5">Lastname</div>
-                <div class="text-gray-600"><%= current_user.lastname %></div>
-                <div class="fw-bolder mt-5">Gender</div>
-                <div class="text-gray-600"><%= current_user.gender %></div>
-                <div class="fw-bolder mt-5">Email</div>
-                <div class="text-gray-600"><a href="#" class="text-gray-600 text-hover-primary"><%= current_user.email %></a></div>
             </div>
           </div>
         </div>

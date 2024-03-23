@@ -36,7 +36,9 @@
               <%= link_to dashboard_profile_index_path, class: 'menu-link px-5' do %>
                 Account
               <% end %>
-
+              <%= link_to dashboard_profile_index_path(tab: 'settings'), class: 'menu-link px-5' do %>
+                Settings
+              <% end %>
             </div>
           <div class="separator my-2"></div>
           <div class="menu-item px-5">

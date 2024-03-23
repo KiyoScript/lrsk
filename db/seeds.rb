@@ -19,8 +19,8 @@ User.create!(
 
 User.create!(
   email: "kiyo@staff.com",
-  firstname: 'Kiyo',
-  lastname: 'Script',
+  firstname: 'John Lloyd',
+  lastname: 'de Sape',
   gender: 'male',
   role: "staff",
   password: "123123123",

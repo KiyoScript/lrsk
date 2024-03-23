@@ -1,0 +1,20 @@
+<div class="d-flex flex-stack fs-4 py-3">
+  <div class="fw-bolder rotate collapsible" data-bs-toggle="collapse" href="#kt_user_view_details" role="button" aria-expanded="false" aria-controls="kt_user_view_details">
+    Details
+  </div>
+</div>
+<div class="separator"></div>
+<div id="kt_user_view_details" class="collapse show">
+  <div class="pb-5 fs-6 text-start">
+    <div class="fw-bolder mt-5">Position</div>
+    <div class="text-gray-600"><%= staff.role %></div>
+    <div class="fw-bolder mt-5">Firstname</div>
+    <div class="text-gray-600"><%= staff.firstname %></div>
+    <div class="fw-bolder mt-5">Lastname</div>
+    <div class="text-gray-600"><%= staff.lastname %></div>
+    <div class="fw-bolder mt-5">Gender</div>
+    <div class="text-gray-600"><%= staff.gender %></div>
+    <div class="fw-bolder mt-5">Email</div>
+    <div class="text-gray-600"><a href="#" class="text-gray-600 text-hover-primary"><%= staff.email %></a></div>
+  </div>
+</div>
