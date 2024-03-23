@@ -32,7 +32,7 @@ module ApplicationHelper
     if current_user.avatar.presence
       current_user.avatar
     else
-      current_user.male? ? image_path("default_male") : image_path("default_female")
+      current_user.male? ? image_path("default_male.svg") : image_path("default_female.svg")
     end
   end
 
@@ -40,7 +40,7 @@ module ApplicationHelper
     if user.avatar.presence
       user.avatar
     else
-      user.male? ? image_path("default_male") : image_path("default_female")
+      user.male? ? image_path("default_male.svg") : image_path("default_female.svg")
     end
   end
 
