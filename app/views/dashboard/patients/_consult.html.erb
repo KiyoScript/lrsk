@@ -1,0 +1,82 @@
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+  <div class="card-header cursor-pointer">
+    <div class="card-title m-0 d-flex flex-column">
+      <h3 class="fw-bold m-0">Consult Details</h3>
+    </div>
+    <h3 class='mt-4 badge badge-light-primary d-flex align-items-center'><%= consult.date.strftime("%b %d, %Y") %></h3>
+  </div>
+  <div class="card-body p-9">
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Time</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.time.strftime("%I:%M %p") %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Reason</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.reason %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">S</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.s %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Blood Pressure</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.blood_pressure %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Heart Rate</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.heart_rate %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">SPO2</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.spo_2 %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Weight</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.weight %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Height</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.height %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">Body Mass Index (BMI)</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.bmi %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">O</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.o %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">A</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.a %></span>
+      </div>
+    </div>
+    <div class="row mb-7">
+      <label class="col-lg-4 fw-semibold text-muted">P</label>
+      <div class="col-lg-8">
+        <span class="fw-bold fs-6 text-gray-800"><%= consult.p %></span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <%= form.fields_for :consults do |consults_form| %>
   <div class="col-12 mb-7">
     <%= consults_form.label 'Date of Consult:', class: 'form-label' %>
-    <%= consults_form.date_field :date, class: 'form-control', value: Time.now %>
+    <%= consults_form.date_field :date, class: 'form-control', value: consults.date %>
   </div>
 
   <div class="col-12 mb-7">

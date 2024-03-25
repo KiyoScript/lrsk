@@ -1,4 +1,6 @@
 class Dashboard::PatientsController < ApplicationController
+  before_action :set_patient
+
   def index
     @filtered_patients = Patient.ransack(params[:q])
     @pagy, @patients = pagy(@filtered_patients.result.order(created_at: :desc), items: 10)
@@ -11,14 +13,37 @@ class Dashboard::PatientsController < ApplicationController
     @patient.physical_examinations.build
   end
 
+  def show;end
 
   def create
     respond_to do |format|
       @patient = current_user.patients.new(patient_params)
       if @patient.save
-        format.html { redirect_to dashboard_patients_path, notice: "Patient successfully created" }
+        format.html { redirect_to dashboard_patient_path(@patient), notice: "Patient successfully created" }
       else
         format.html { redirect_to new_dashboard_patient_path, alert: @patient.errors.full_messages.first }
+      end
+    end
+  end
+
+  def edit;end
+
+  def update
+    respond_to do |format|
+      if @patient.update(patient_params)
+        format.html { redirect_to dashboard_patient_path(@patient), notice: "Patient successfully updated" }
+      else
+        format.html { redirect_to dashboard_patient_path(@patient), alert: @patient.errors.full_messages.first }
+      end
+    end
+  end
+
+  def destroy
+    respond_to do |format|
+      if @patient.destroy
+        format.html { redirect_to dashboard_patients_path, notice: "Patient successfully deleted" }
+      else
+        format.html { redirect_to dashboard_patients_path, alert: @patient.errors.full_messages.first }
       end
     end
   end
@@ -46,7 +71,6 @@ class Dashboard::PatientsController < ApplicationController
         :limbs,
         :z_score,
         consults_attributes: [
-          :id,
           :date,
           :time,
           :reason,
@@ -65,7 +89,6 @@ class Dashboard::PatientsController < ApplicationController
           :_destroy
         ],
         physical_examinations_attributes: [
-          :id,
           :right_eye,
           :left_eye,
           :both_eyes,
