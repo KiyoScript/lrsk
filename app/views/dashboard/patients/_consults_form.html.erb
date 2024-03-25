@@ -1,0 +1,76 @@
+<%= form.fields_for :consults do |consults_form| %>
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Date of Consult:', class: 'form-label' %>
+    <%= consults_form.date_field :date, class: 'form-control', value: Time.now %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Time of Consult:', class: 'form-label' %>
+    <%= consults_form.time_field :time, class: 'form-control', value: Time.now.strftime('%H:%M') %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Reason:', class: 'form-label' %>
+    <%= consults_form.text_area :reason, class: 'form-control', placeholder: 'For maintenance' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'S:', class: 'form-label' %>
+    <%= consults_form.text_field :s, class: 'form-control'%>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Blood Pressure:', class: 'form-label' %>
+    <%= consults_form.text_field :blood_pressure, class: 'form-control', placeholder: '120/60' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Heart Rate:', class: 'form-label' %>
+    <%= consults_form.number_field :heart_rate, class: 'form-control', min: 0, placeholder: '86' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'RR:', class: 'form-label' %>
+    <%= consults_form.text_field :rr, class: 'form-control'%>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Temperature:', class: 'form-label' %>
+    <%= consults_form.number_field :temperature, class: 'form-control', step: '0.1' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'SPO2:', class: 'form-label' %>
+    <%= consults_form.text_field :spo_2, class: 'form-control'%>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Weight:', class: 'form-label' %>
+    <%= consults_form.number_field :weight, class: 'form-control', step: '0.1' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Height:', class: 'form-label' %>
+    <%= consults_form.number_field :height, class: 'form-control', step: '0.1' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'Body Mass Index (BMI):', class: 'form-label' %>
+    <%= consults_form.number_field :bmi, class: 'form-control', step: '0.1' %>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'O:', class: 'form-label' %>
+    <%= consults_form.text_field :o, class: 'form-control'%>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'A:', class: 'form-label' %>
+    <%= consults_form.text_field :a, class: 'form-control'%>
+  </div>
+
+  <div class="col-12 mb-7">
+    <%= consults_form.label 'P:', class: 'form-label' %>
+    <%= consults_form.text_area :p, class: 'form-control'%>
+  </div>
+<% end %>

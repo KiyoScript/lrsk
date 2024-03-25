@@ -1,0 +1,67 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  right_eye: false
+  left_eye: false
+  both_eyes: false
+  heent: MyString
+  neck: MyString
+  chest_lungs: MyString
+  heart: MyString
+  breast: MyString
+  abdomen: MyString
+  gut: MyString
+  extremities: MyString
+  musculoskeletal: MyString
+  neurological: MyString
+  skin: MyString
+  others: MyText
+  complete_blood_count: MyString
+  urinalysis: MyString
+  fecalysis: MyString
+  chest_xray: MyString
+  fasting_blood_sugar: MyString
+  lipid_profile: MyString
+  blood_uric_acid: MyString
+  ecg_12_leads: MyString
+  drug_test: MyString
+  sputum_genexpert: MyString
+  hbsag: MyString
+  others_1: MyText
+  diagnosis: MyText
+  plan: MyText
+  district_physician: MyString
+  date: 2024-03-25
+
+two:
+  right_eye: false
+  left_eye: false
+  both_eyes: false
+  heent: MyString
+  neck: MyString
+  chest_lungs: MyString
+  heart: MyString
+  breast: MyString
+  abdomen: MyString
+  gut: MyString
+  extremities: MyString
+  musculoskeletal: MyString
+  neurological: MyString
+  skin: MyString
+  others: MyText
+  complete_blood_count: MyString
+  urinalysis: MyString
+  fecalysis: MyString
+  chest_xray: MyString
+  fasting_blood_sugar: MyString
+  lipid_profile: MyString
+  blood_uric_acid: MyString
+  ecg_12_leads: MyString
+  drug_test: MyString
+  sputum_genexpert: MyString
+  hbsag: MyString
+  others_1: MyText
+  diagnosis: MyText
+  plan: MyText
+  district_physician: MyString
+  date: 2024-03-25

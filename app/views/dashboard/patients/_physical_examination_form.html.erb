@@ -1,0 +1,341 @@
+<%= form.fields_for :physical_examinations do |physical_examinations_form| %>
+  <div class="col-12 mb-7">
+      <strong>Vision: Uncorrected/Corrected</strong>
+  </div>
+  <div class="col-12 mb-7">
+    <span class="me-4">Right Eye:</span><%= physical_examinations_form.radio_button :right_eye, 'uncorrected', class: 'form-check-input' %>
+    <span class="me-4">Left Eye:</span><%= physical_examinations_form.radio_button :left_eye, 'uncorrected', class: 'form-check-input' %>
+    <span class="me-4">Left Eye:</span><%= physical_examinations_form.radio_button :both_eyes, 'uncorrected', class: 'form-check-input' %>
+  </div>
+  <div class="col-12 mb-7">
+    <div class="row">
+      <hr class='mb-7'>
+      <div class="col-4">
+      </div>
+      <div class="col-4">
+        <strong>NORMAL</strong>
+      </div>
+      <div class="col-4">
+        <strong>ABNORMAL FINDINGS</strong>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="heent" class='form-label'>HEENT:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :heent, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :heent, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="neck" class='form-label'>NECK:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :neck, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :neck, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="chest-lungs" class='form-label'>CHEST/LUNGS:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :chest_lungs, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :chest_lungs, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="heart" class='form-label'>HEART:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :heart, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :heart, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="breast" class='form-label'>BREAST:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :breast, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :breast, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="abdomen" class='form-label'>ABDOMEN:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :abdomen, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :abdomen, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="gut" class='form-label'>GUT:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :gut, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :gut, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="extremities" class='form-label'>EXTREMITIES:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :extremities, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :extremities, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="musculoskeletal" class='form-label'>MUSCULOSKELETAL:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :musculoskeletal, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :musculoskeletal, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="neurological" class='form-label'>NEUROLOGICAL:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :neurological, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :neurological, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="skin" class='form-label'>SKIN:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :skin, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :skin, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="others" class='form-label'>OTHERS:</label>
+      </div>
+      <div class="col-8">
+        <%= physical_examinations_form.text_field :others, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+    <hr>
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="complete-blood-count" class='form-label'>Complete Blood Count:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :complete_blood_count, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :complete_blood_count, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="urinalysis" class='form-label'>Urinalysis:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :urinalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :urinalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="fecalysis" class='form-label'>Fecalysis:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :fecalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :fecalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="chest_xray" class='form-label'>Chest X-ray:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :chest_xray, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :chest_xray, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="fasting-blood-sugar" class='form-label'>Fasting Blood Sugar:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :fasting_blood_sugar, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :fasting_blood_sugar, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="lipid-profile" class='form-label'>Lipid Profile:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :lipid_profile, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :lipid_profile, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="blood-uric-acid" class='form-label'>Blood Uric Acid:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :blood_uric_acid, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :blood_uric_acid, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="acg-12-leads" class='form-label'>ECG 12-leads:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :ecg_12_leads, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :ecg_12_leads, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="drug-test" class='form-label'>Drug Test:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :drug_test, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :drug_test, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="sputum-genexpert" class='form-label'>Sputum GeneXpert:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :sputum_genexpert, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :sputum_genexpert, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="hbsag" class='form-label'>HBsAg:</label>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :hbsag, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+      <div class="col-4">
+        <%= physical_examinations_form.text_field :hbsag, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="others_1" class='form-label'>Others:</label>
+      </div>
+      <div class="col-8">
+        <%= physical_examinations_form.text_field :others_1, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+    <hr class='my-4'>
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="diagnosis" class='form-label'><strong>DIAGNOSIS:</strong></label>
+      </div>
+      <div class="col-8">
+        <%= physical_examinations_form.text_field :diagnosis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="plan" class='form-label'><strong>PLAN:</strong></label>
+      </div>
+      <div class="col-8">
+        <%= physical_examinations_form.text_field :plan, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="district-physician" class='form-label'><strong>District Physician:</strong></label>
+      </div>
+      <div class="col-8">
+        <%= physical_examinations_form.text_field :district_physician, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-4">
+        <label for="date" class='form-label'><strong>Date:</strong></label>
+      </div>
+      <div class="col-8">
+        <%= physical_examinations_form.date_field :date, class: 'form-control', value: Time.now %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_25_051255) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_25_055531) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -80,6 +80,44 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_25_051255) do
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
+  create_table "physical_examinations", force: :cascade do |t|
+    t.boolean "right_eye"
+    t.boolean "left_eye"
+    t.boolean "both_eyes"
+    t.string "heent"
+    t.string "neck"
+    t.string "chest_lungs"
+    t.string "heart"
+    t.string "breast"
+    t.string "abdomen"
+    t.string "gut"
+    t.string "extremities"
+    t.string "musculoskeletal"
+    t.string "neurological"
+    t.string "skin"
+    t.text "others"
+    t.string "complete_blood_count"
+    t.string "urinalysis"
+    t.string "fecalysis"
+    t.string "chest_xray"
+    t.string "fasting_blood_sugar"
+    t.string "lipid_profile"
+    t.string "blood_uric_acid"
+    t.string "ecg_12_leads"
+    t.string "drug_test"
+    t.string "sputum_genexpert"
+    t.string "hbsag"
+    t.text "others_1"
+    t.text "diagnosis"
+    t.text "plan"
+    t.string "district_physician"
+    t.date "date"
+    t.integer "patient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_physical_examinations_on_patient_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -100,4 +138,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_25_051255) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "consults", "patients"
   add_foreign_key "patients", "users"
+  add_foreign_key "physical_examinations", "patients"
 end
