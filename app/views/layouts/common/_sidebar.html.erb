@@ -12,19 +12,21 @@
       <div class="fw-bolder text-light">ATR</div>
     </div>
     <div class="aside-nav d-flex flex-column flex-lg-center justify-content-start flex-column-fluid w-100 pb-5 px-3">
-      <div class="menu-item py-2">
+      <div class="menu-item py-2 w-100 <%= request.path.include?('dashboard/staffs') ? 'border-bottom bg-light' : ''%>">
         <% if current_user.administrator? %>
           <%= link_to dashboard_staffs_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
-            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="staffs">
+            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Staffs">
               <%= bootstrap_icon 'people-fill', width: '40' %>
             </span>
           <% end %>
         <% end %>
-         <%= link_to dashboard_patients_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
-            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="patient">
-              <%= bootstrap_icon 'person-lines-fill', width: '40' %>
-            </span>
-          <% end %>
+      </div>
+      <div class="menu-item py-2 w-100 <%= request.path.include?('dashboard/patients') ? 'border-bottom bg-light' : ''%> ">
+        <%= link_to dashboard_patients_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
+          <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Patients">
+            <%= bootstrap_icon 'person-lines-fill', width: '40' %>
+          </span>
+        <% end %>
       </div>
     </div>
     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto">

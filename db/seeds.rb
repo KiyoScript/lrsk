@@ -32,6 +32,8 @@ Patient.create!(
   birthdate: DateTime.now,
   age: 20,
   gender: 'male',
-  details: { address: 'Brgy. Linao' },
+  details_address: 'Brgy. Linao',
+  details_contact_number: '09123456789',
   user_id: 1
 )
+

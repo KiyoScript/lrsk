@@ -1,0 +1,200 @@
+<%= form_with model: @patient, url: dashboard_patients_path, method: :post, html: { class: 'row' } do |form| %>
+  <div class="col-12 col-md-5">
+    <div class="row gap-4 mb-4">
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-header collapsible cursor-pointer rotate" data-bs-toggle="collapse" data-bs-target="#kt_docs_card_collapsible">
+            <h3 class="card-title"><strong>New Patient</strong></h3>
+            <div class="card-toolbar rotate-180">
+              <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
+            </div>
+          </div>
+          <div id="kt_docs_card_collapsible" class="collapse show">
+            <div class="card-body px-10">
+              <div class="col-12 mb-7">
+                <%= form.label 'Full Name:', class: 'form-label'%>
+                <%= form.text_field :fullname, class: 'form-control', placeholder: 'E.g. John Lloyd de Sape' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Birthdate:', class: 'form-label'%>
+                <%= form.date_field :birthdate, class: 'form-control'%>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Age:', class: 'form-label'%>
+                <%= form.number_field :age, class: 'form-control', id: 'floatingInput', min: 0, max: 100, placeholder: '18' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Gender:', class: "form-label"%>
+                <%= form.select :gender, Patient.genders.keys.map { |key| [key.humanize, key] }, { }, class: 'form-select'%>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Contact Number: ', class: 'form-label'%>
+                <%= form.text_field :details_contact_number, class: 'form-control', placeholder: '(+63) 9612337412'%>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Address:', class: "form-label" %>
+                <%= form.select :details_address, ['Brgy. Linao', 'Brgy. Punta', 'Brgy. Tambulilid', 'Brgy. Naungan'], {}, class: 'form-select' %>
+              </div>
+              <hr>
+              <h4 class="card-title text-normal mb-7">Pedia Patients</h4>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Length:', class: "form-label" %>
+                <%= form.number_field :length, class: 'form-control', step: '0.1', min: 0, placeholder: '5.5cm' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Body Circumference:', class: "form-label" %>
+                <%= form.number_field :body_circumference, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'MUAC:', class: "form-label" %>
+                <%= form.number_field :muac, class: 'form-control', step: '0.1', min: 0, placeholder: '2.5cm' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Head Circumference:', class: "form-label" %>
+                <%= form.number_field :head_circumference, class: 'form-control', step: '0.1', min: 0, placeholder: '6.5cm' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Hip:', class: "form-label" %>
+                <%= form.number_field :hip, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Limbs:', class: "form-label" %>
+                <%= form.number_field :limbs, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
+              </div>
+
+              <div class="col-12 mb-7">
+                <%= form.label 'Z Score:', class: "form-label" %>
+                <%= form.number_field :z_score, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-7">
+    <div class="row gap-4">
+      <div class="col-12">
+        <div class="card shadow-sm" id="accordionForm">
+          <div class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#consultation" aria-expanded="true" aria-controls="consultation">
+            <h3 class="card-title"><strong>Consultation Form</strong></h3>
+            <div class="card-toolbar rotate-180">
+              <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
+            </div>
+          </div>
+          <div id="consultation" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+            <div class="card-body">
+              <%= form.fields_for :consults do |consults_form| %>
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Date of Consult:', class: 'form-label' %>
+                  <%= consults_form.date_field :date, class: 'form-control', value: Time.now %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Time of Consult:', class: 'form-label' %>
+                  <%= consults_form.time_field :time, class: 'form-control', value: Time.now.strftime('%H:%M') %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Reason:', class: 'form-label' %>
+                  <%= consults_form.text_area :reason, class: 'form-control', placeholder: 'For maintenance' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'S:', class: 'form-label' %>
+                  <%= consults_form.text_field :s, class: 'form-control'%>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Blood Pressure:', class: 'form-label' %>
+                  <%= consults_form.text_field :blood_pressure, class: 'form-control', placeholder: '120/60' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Heart Rate:', class: 'form-label' %>
+                  <%= consults_form.number_field :heart_rate, class: 'form-control', min: 0, placeholder: '86' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'RR:', class: 'form-label' %>
+                  <%= consults_form.text_field :rr, class: 'form-control'%>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Temperature:', class: 'form-label' %>
+                  <%= consults_form.number_field :temperature, class: 'form-control', step: '0.1' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'SPO2:', class: 'form-label' %>
+                  <%= consults_form.text_field :spo_2, class: 'form-control'%>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Weight:', class: 'form-label' %>
+                  <%= consults_form.number_field :weight, class: 'form-control', step: '0.1' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Height:', class: 'form-label' %>
+                  <%= consults_form.number_field :height, class: 'form-control', step: '0.1' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'Body Mass Index (BMI):', class: 'form-label' %>
+                  <%= consults_form.number_field :bmi, class: 'form-control', step: '0.1' %>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'O:', class: 'form-label' %>
+                  <%= consults_form.text_field :o, class: 'form-control'%>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'A:', class: 'form-label' %>
+                  <%= consults_form.text_field :a, class: 'form-control'%>
+                </div>
+
+                <div class="col-12 mb-7">
+                  <%= consults_form.label 'P:', class: 'form-label' %>
+                  <%= consults_form.text_area :p, class: 'form-control'%>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card shadow-sm" id="accordionForm">
+          <div class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#physicalExamination" aria-expanded="true" aria-controls="physicalExamination">
+            <h3 class="card-title"><strong>Physical Exmination Form</strong></h3>
+            <div class="card-toolbar rotate-180">
+              <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
+            </div>
+          </div>
+          <div id="physicalExamination" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+            <div class="card-body">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-end mt-4">
+      <%= form.submit nil, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+<% end %>
+

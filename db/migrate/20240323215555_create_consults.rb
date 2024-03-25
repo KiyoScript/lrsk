@@ -17,7 +17,6 @@ class CreateConsults < ActiveRecord::Migration[7.1]
       t.text :a
       t.text :p
       t.references :patient, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

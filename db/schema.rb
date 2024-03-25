@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_23_215555) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_25_051255) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -56,11 +56,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_215555) do
     t.text "a"
     t.text "p"
     t.integer "patient_id", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_consults_on_patient_id"
-    t.index ["user_id"], name: "index_consults_on_user_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -72,6 +70,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_215555) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "length"
+    t.float "body_circumference"
+    t.float "muac"
+    t.float "head_circumference"
+    t.float "hip"
+    t.float "limbs"
+    t.string "z_score"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
@@ -94,6 +99,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_215555) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "consults", "patients"
-  add_foreign_key "consults", "users"
   add_foreign_key "patients", "users"
 end
