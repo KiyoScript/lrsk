@@ -12,6 +12,7 @@ class Patient < ApplicationRecord
 
   validates :fullname, :birthdate, :age, :gender, :details, presence: true
 
+  scope :tambulilid, -> { where(details: { address: "Brgy. Punta" }) }
 
   def self.ransackable_attributes(auth_object = nil)
     [ "fullname" ]

@@ -1,9 +1,9 @@
 <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
   <div class="card-header cursor-pointer">
-    <div class="card-title m-0 d-flex flex-column">
-      <h3 class="fw-bold m-0">Consult Details</h3>
+    <div class="card-title m-0 d-flex flex-row align-items-center justify-content-center">
+      <h3 class="fw-bold mt-5 me-2">Consult Details</h3>
+      <h3 class='mt-4 badge badge-light-primary d-flex align-items-center'><%= consult.date.strftime("%b %d, %Y") %></h3>
     </div>
-    <h3 class='mt-4 badge badge-light-primary d-flex align-items-center'><%= consult.date.strftime("%b %d, %Y") %></h3>
   </div>
   <div class="card-body p-9">
     <div class="row mb-7">

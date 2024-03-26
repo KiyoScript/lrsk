@@ -9,7 +9,7 @@
   <div class="aside-primary d-flex flex-column align-items-lg-center flex-row-auto position-relative">
     <div class="bg-primary mb-4 position-relative d-flex align-items-center justify-content-center flex-column-auto fs-1 left-0 w-100"
          style="height: 88px;">
-      <div class="fw-bolder text-light">ATR</div>
+      <%= link_to 'ATR', root_path, class:'fw-bolder text-light' %>
     </div>
     <div class="aside-nav d-flex flex-column flex-lg-center justify-content-start flex-column-fluid w-100 pb-5 px-3">
       <div class="menu-item py-2 w-100 <%= request.path.include?('dashboard/staffs') ? 'border-bottom bg-light' : ''%>">

@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     resources :patients
   end
 
+  namespace :patients do
+    resources :consults
+    resources :physical_examinations
+  end
+
   root to: 'home#index'
 
   get 'welcome' => 'welcome#index'
