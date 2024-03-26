@@ -1,0 +1,24 @@
+<div class="d-flex flex-column flex-root">
+  <div class="d-flex flex-column flex-column-fluid">
+    <div class="d-flex flex-row-fluid flex-column flex-column-fluid text-center p-10 py-lg-20">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <%= image_tag("welcome.svg", class: "img-fluid") %>
+    </div>
+    <% unless current_user.administrator? || current_user.staff? %>
+      <h1 class="fw-bolder fs-2qx text-gray-800 mb-7">Linao Reecord Keeping Web-based System</h1>
+      <div class="fw-bold fs-3 text-muted mb-15">
+          Kindly wait for the administrator to accept your account.<br>
+          Thank you.
+      </div>
+    <% else %>
+      <h1 class="fw-bolder fs-2qx text-gray-800 mb-7">Linao Reecord Keeping Web-based System</h1>
+      <div class="fw-bold fs-3 text-muted mb-15">
+        Hello there, <%= current_user.firstname.present? ? current_user.firstname : staff_username(current_user) %><br>
+      </div>
+      <div class="col-12 text-center">
+        <%= link_to 'Go to Dashboard', root_path, class: 'btn btn-primary' if current_user.administrator? %>
+      </div>
+    <% end %>
+  </div>
+  <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-150px min-h-lg-350px" style="background-image: url(/jet-html-free/assets/media/illustrations/sigma-1/7.png)"></div>
+</div>

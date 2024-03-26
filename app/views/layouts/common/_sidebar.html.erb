@@ -21,13 +21,15 @@
           <% end %>
         <% end %>
       </div>
-      <div class="menu-item py-2 w-100 <%= request.path.include?('dashboard/patients') ? 'border-bottom bg-light' : ''%> ">
-        <%= link_to dashboard_patients_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
-          <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Patients">
-            <%= bootstrap_icon 'person-lines-fill', width: '40' %>
-          </span>
-        <% end %>
-      </div>
+      <% if current_user.staff? || current_user.administrator? %>
+        <div class="menu-item py-2 w-100 <%= request.path.include?('dashboard/patients') ? 'border-bottom bg-light' : ''%> ">
+          <%= link_to dashboard_patients_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
+            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Patients">
+              <%= bootstrap_icon 'person-lines-fill', width: '40' %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto">
       &nbsp;

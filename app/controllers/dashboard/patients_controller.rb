@@ -1,4 +1,5 @@
 class Dashboard::PatientsController < ApplicationController
+  include StaffAccessible
   before_action :set_patient
 
   def index

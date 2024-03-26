@@ -8,8 +8,10 @@ module AdminAccessible
   protected
 
   def user_restriction!
-    unless current_user.administrator?
-      redirect_to root_path, flash: { error: "You are not authorized to access this page" }
+    unless current_user.administrator? && current_user.staff?
+      respond_to do |format|
+        format.html { redirect_to root_path, alert: "You are not authorized to access this page"  }
+      end
     end
   end
 end

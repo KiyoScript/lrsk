@@ -10,7 +10,11 @@
     </div>
     <div class="d-flex flex-column">
       <%= link_to dashboard_staff_path(staff), class: 'text-gray-800 text-hover-primary mb-1' do %>
-        <%= full_name(staff) %>
+        <% if staff.firstname.present? || staff.lastname.present? %>
+          <%= full_name(staff) %>
+        <% else %>
+          <%= staff_username(staff) %>
+        <% end %>
       <% end %>
       <span><%= staff.email %></span>
     </div>

@@ -28,6 +28,10 @@ module ApplicationHelper
     user.firstname + " " + user.lastname
   end
 
+  def staff_username(user)
+    user.email.split('@')[0]
+  end
+
   def profile_picture
     if current_user.avatar.presence
       current_user.avatar
