@@ -14,5 +14,5 @@ rails db:seed
 
 Start local server
 ```
-bin/dev
+rails s
 ```
