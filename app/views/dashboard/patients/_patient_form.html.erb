@@ -1,66 +1,66 @@
-<div class="col-12 mb-7">
+<div class='col-12 mb-7'>
   <%= form.label 'Full Name:', class: 'form-label'%>
   <%= form.text_field :fullname, class: 'form-control', placeholder: 'E.g. John Lloyd de Sape' %>
 </div>
 
-<div class="col-12 mb-7">
+<div class='col-12 mb-7'>
   <%= form.label 'Birthdate:', class: 'form-label'%>
-  <%= form.date_field :birthdate, class: 'form-control'%>
+  <%= form.date_field :birthdate, class: 'form-control', data: { target: 'patients.birthdate' }%>
 </div>
 
-<div class="col-12 mb-7">
+<div class='col-12 mb-7' >
   <%= form.label 'Age:', class: 'form-label'%>
-  <%= form.number_field :age, class: 'form-control', id: 'floatingInput', min: 0, max: 100, placeholder: '18' %>
+  <%= form.number_field :age, class: 'form-control', min: 0, max: 100, placeholder: '18', data: { target: 'patients.age' } %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Gender:', class: "form-label"%>
+<div class='col-12 mb-7'>
+  <%= form.label 'Gender:', class: 'form-label'%>
   <%= form.select :gender, Patient.genders.keys.map { |key| [key.humanize, key] }, { }, class: 'form-select'%>
 </div>
 
-<div class="col-12 mb-7">
+<div class='col-12 mb-7'>
   <%= form.label 'Contact Number: ', class: 'form-label'%>
   <%= form.text_field :details_contact_number, class: 'form-control', placeholder: '(+63) 9612337412'%>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Address:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Address:', class: 'form-label' %>
   <%= form.select :details_address, ['Brgy. Linao', 'Brgy. Punta', 'Brgy. Tambulilid', 'Brgy. Naungan'], {}, class: 'form-select' %>
 </div>
 <hr>
-<h4 class="card-title text-normal mb-7">Pedia Patients</h4>
+<h4 class='card-title text-normal mb-7'>Pedia Patients</h4>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Length:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Length:', class: 'form-label' %>
   <%= form.number_field :length, class: 'form-control', step: '0.1', min: 0, placeholder: '5.5cm' %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Body Circumference:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Body Circumference:', class: 'form-label' %>
   <%= form.number_field :body_circumference, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'MUAC:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'MUAC:', class: 'form-label' %>
   <%= form.number_field :muac, class: 'form-control', step: '0.1', min: 0, placeholder: '2.5cm' %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Head Circumference:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Head Circumference:', class: 'form-label' %>
   <%= form.number_field :head_circumference, class: 'form-control', step: '0.1', min: 0, placeholder: '6.5cm' %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Hip:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Hip:', class: 'form-label' %>
   <%= form.number_field :hip, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Limbs:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Limbs:', class: 'form-label' %>
   <%= form.number_field :limbs, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
 </div>
 
-<div class="col-12 mb-7">
-  <%= form.label 'Z Score:', class: "form-label" %>
+<div class='col-12 mb-7'>
+  <%= form.label 'Z Score:', class: 'form-label' %>
   <%= form.number_field :z_score, class: 'form-control', step: '0.1', min: 0, placeholder: '10.5cm' %>
 </div>

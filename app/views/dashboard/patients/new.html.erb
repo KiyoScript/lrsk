@@ -1,16 +1,16 @@
 <%= form_with model: @patient, url: dashboard_patients_path, method: :post, html: { class: 'row' } do |form| %>
-  <div class="col-12">
-    <div class="row gap-4 mb-4">
-      <div class="col-12">
-        <div class="card shadow-sm">
-          <div class="card-header collapsible cursor-pointer rotate" data-bs-toggle="collapse" data-bs-target="#kt_docs_card_collapsible">
-            <h3 class="card-title"><strong>New Patient</strong></h3>
-            <div class="card-toolbar rotate-180">
+  <div class='col-12'>
+    <div class='row gap-4 mb-4'>
+      <div class='col-12'>
+        <div class='card shadow-sm'>
+          <div class='card-header collapsible cursor-pointer rotate' data-bs-toggle='collapse' data-bs-target='#kt_docs_card_collapsible'>
+            <h3 class='card-title'><strong>New Patient</strong></h3>
+            <div class='card-toolbar rotate-180'>
               <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
             </div>
           </div>
-          <div id="kt_docs_card_collapsible" class="collapse show">
-            <div class="card-body px-10">
+          <div id='kt_docs_card_collapsible' class='collapse show' data-controller='patients'>
+            <div class='card-body px-10'>
               <%= render partial: 'patient_form', locals: { form: form }%>
             </div>
           </div>
@@ -18,8 +18,8 @@
       </div>
     </div>
   </div>
-  <div class="text-end mt-4">
-    <%= form.submit 'Add Patient', class: "btn btn-primary btn-sm" %>
+  <div class='text-end mt-4'>
+    <%= form.submit 'Add Patient', class: 'btn btn-primary btn-sm' %>
   </div>
 <% end %>
 
