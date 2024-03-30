@@ -10,8 +10,6 @@ class Dashboard::PatientsController < ApplicationController
 
   def new
     @patient = current_user.patients.new
-    @patient.consults.build
-    @patient.physical_examinations.build
   end
 
   def show;end
@@ -70,59 +68,7 @@ class Dashboard::PatientsController < ApplicationController
         :head_circumference,
         :hip,
         :limbs,
-        :z_score,
-        consults_attributes: [
-          :date,
-          :time,
-          :reason,
-          :s,
-          :blood_pressure,
-          :heart_rate,
-          :rr,
-          :temperature,
-          :spo_2,
-          :weight,
-          :height,
-          :bmi,
-          :o,
-          :a,
-          :p,
-          :_destroy
-        ],
-        physical_examinations_attributes: [
-          :right_eye,
-          :left_eye,
-          :both_eyes,
-          :heent,
-          :neck,
-          :chest_lungs,
-          :heart,
-          :breast,
-          :abdomen,
-          :gut,
-          :extremities,
-          :musculoskeletal,
-          :neurological,
-          :skin,
-          :others,
-          :complete_blood_count,
-          :urinalysis,
-          :fecalysis,
-          :chest_xray,
-          :fasting_blood_sugar,
-          :lipid_profile,
-          :blood_uric_acid,
-          :ecg_12_leads,
-          :drug_test,
-          :sputum_genexpert,
-          :hbsag,
-          :others_1,
-          :diagnosis,
-          :plan,
-          :district_physician,
-          :date,
-          :_destroy
-        ]
+        :z_score
       )
   end
 end

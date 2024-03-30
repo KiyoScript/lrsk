@@ -1,5 +1,5 @@
 <%= form_with model: @patient, url: dashboard_patients_path, method: :post, html: { class: 'row' } do |form| %>
-  <div class="col-12 col-md-5">
+  <div class="col-12">
     <div class="row gap-4 mb-4">
       <div class="col-12">
         <div class="card shadow-sm">
@@ -18,43 +18,8 @@
       </div>
     </div>
   </div>
-
-  <div class="col-12 col-md-7">
-    <div class="row gap-4">
-      <div class="col-12">
-        <div class="card shadow-sm" id="accordionForm">
-          <div class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#consultation" aria-expanded="true" aria-controls="consultation">
-            <h3 class="card-title"><strong>Consultation Form</strong></h3>
-            <div class="card-toolbar rotate-180">
-              <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
-            </div>
-          </div>
-          <div id="consultation" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
-            <div class="card-body px-10">
-              <%= render partial: 'consults_form', locals: { form: form } %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="card shadow-sm" id="accordionForm">
-          <div class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#physicalExamination" aria-expanded="true" aria-controls="physicalExamination">
-            <h3 class="card-title"><strong>Physical Examination Form</strong></h3>
-            <div class="card-toolbar rotate-180">
-              <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
-            </div>
-          </div>
-          <div id="physicalExamination" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
-            <div class="card-body px-10">
-              <%= render partial: 'physical_examination_form', locals: { form: form } %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-end mt-4">
-      <%= form.submit 'Add Patient', class: "btn btn-primary btn-sm" %>
-    </div>
+  <div class="text-end mt-4">
+    <%= form.submit 'Add Patient', class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>
 
