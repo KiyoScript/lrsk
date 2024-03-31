@@ -17,7 +17,6 @@ one:
   a: MyText
   p: MyText
   patient: one
-  user: one
 
 two:
   date: 2024-03-24
@@ -36,4 +35,3 @@ two:
   a: MyText
   p: MyText
   patient: two
-  user: two
