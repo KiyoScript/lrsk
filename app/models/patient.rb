@@ -10,16 +10,11 @@ class Patient < ApplicationRecord
     male: 2
   }
 
-  store :details,
-    accessors: [
-      :address,
-      :contact_number
-      ],
-    coder: JSON,
-    prefix: true
+  validates :fullname, :birthdate, :age, :gender, :address_line, :contact_number, presence: true
 
-  validates :fullname, :birthdate, :age, :gender, :details, presence: true
-
+  def self.total_patients_by_address_line(address_line)
+    where(address_line: address_line).count
+  end
 
   def self.ransackable_attributes(auth_object = nil)
     [ "fullname" ]

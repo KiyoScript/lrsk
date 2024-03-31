@@ -1,26 +1,26 @@
 <div class="row p-0 px-9">
   <div class="col">
     <div class="border bg-light-primary rounded border-primary border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-      <span class="fs-4 fw-bold text-gray-400 d-block">Brgy. Tambulilid</span>
-      <span class="fs-2x fw-boldest text-gray-800 counted" data-kt-countup="true" data-kt-countup-value="3899">24</span>
+      <%= content_tag :span, 'Brgy. Tambulilid', class: 'fs-4 fw-bold text-gray-400 d-block' %>
+      <%= content_tag :span, @total_patient_of_tambulilid, class: 'fs-2x fw-boldest text-gray-800 counted', data: { kt_countup: true, kt_countup_value: @total_patient_of_tambulilid }%>
     </div>
   </div>
   <div class="col">
     <div class="border border-dashed bg-light-danger border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-      <span class="fs-4 fw-bold text-gray-400 d-block">Brgy. Naungan</span>
-      <span class="fs-2x fw-boldest text-gray-800 counted" data-kt-countup="true" data-kt-countup-value="72">12</span>
+      <%= content_tag :span, 'Brgy. Naungan', class: 'fs-4 fw-bold text-gray-400 d-block' %>
+      <%= content_tag :span, @total_patient_of_naungan, class: 'fs-2x fw-boldest text-gray-800 counted', data: { kt_countup: true, kt_countup_value: @total_patient_of_naungan }  %>
     </div>
   </div>
   <div class="col">
     <div class="border border-dashed border-gray-300 bg-light-warning text-center min-w-125px rounded pt-6 pb-4 my-3">
-      <span class="fs-4 fw-bold text-gray-400 d-block">Brgy. Linao</span>
-      <span class="fs-2x fw-boldest text-gray-800 counted" data-kt-countup="true" data-kt-countup-value="291">22</span>
+      <%= content_tag :span, 'Brgy. Linao', class: 'fs-4 fw-bold text-gray-400 d-block' %>
+      <%= content_tag :span, @total_patient_of_linao, class: 'fs-2x fw-boldest text-gray-800 counted', data: { kt_countup: true, kt_countup_value: @total_patient_of_linao } %>
     </div>
   </div>
   <div class="col">
     <div class="border border-dashed border-gray-300 text-center bg-light-info min-w-125px rounded pt-6 pb-4 my-3">
-      <span class="fs-4 fw-bold text-gray-400 d-block">Brgy. Punta</span>
-      <span class="fs-2x fw-boldest text-gray-800 counted" data-kt-countup="true" data-kt-countup-value="6">32</span>
+      <%= content_tag :span, 'Brgy. Punta', class: 'fs-4 fw-bold text-gray-400 d-block' %>
+      <%= content_tag :span, @total_patient_of_punta, class: 'fs-2x fw-boldest text-gray-800 counted', data: { kt_countup: true, kt_countup_value: @total_patient_of_punta } %>
     </div>
   </div>
 </div>

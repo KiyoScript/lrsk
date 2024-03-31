@@ -1,191 +1,194 @@
-<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
-  <div class="card-header cursor-pointer">
-    <div class="card-title m-0 d-flex flex-row align-items-center justify-content-center">
-      <h3 class="fw-bold mt-5 me-2">Physical Examination Records</h3>
-      <h3 class='mt-4 badge badge-light-primary d-flex align-items-center'><%= physical_examination.date.strftime("%b %d, %Y") if physical_examination.date.present? %></h3>
+<div class='card mb-5 mb-xl-10' id='kt_profile_details_view'>
+  <div class='card-header cursor-pointer'>
+    <div class='card-title m-0 d-flex flex-row align-items-center justify-content-center'>
+      <%= content_tag :h3, 'Physical Examination Records', class: 'fw-bold mt-5 me-2' %>
+      <%= content_tag :h3, physical_examination.date.strftime('%b %d, %Y'), class: 'mt-4 badge badge-light-primary d-flex align-items-center' if physical_examination.date.present? %>
     </div>
   </div>
-  <div class="card-body p-9">
-    <div class="row mb-7">
-      <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'>Vision: Uncorrected:
-        <span class='badge badge-light-primary'>True</span> Corrected:<span class='badge badge-light-danger'>False</span>
+  <div class='card-body p-9'>
+    <div class='row mb-7'>
+      <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'>
+        Vision: Uncorrected: <%= content_tag :span, 'True', class: 'badge badge-light-primary' %>
+        Corrected: <% content_tag :span, 'False', class: 'badge badge-light-danger' %>
       </strong>
-      <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'><span class='badge badge-light-primary'>Yes</span> if Normal otherwise the <span class='badge badge-light-danger'>Abnormal findings </span>
+      <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'>
+        <%= content_tag :span, 'Yes', class: 'badge badge-light-primary' %>  if Normal otherwise the
+        <%= content_tag :span, 'Abnormal findings', class: 'badge badge-light-danger' %>
       </strong>
-      <label class="col-lg-4 fw-semibold text-muted">Right Eye</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.right_eye %></span>
+      <%= content_tag :label, 'Right Eye', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.right_eye, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Left Eye</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.left_eye %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Left Eye', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.left_eye, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Both Eyes</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.both_eyes %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Both Eyes', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.both_eyes, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <hr>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Heent</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.heent %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Heent', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.heent, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Neck</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.neck %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Neck', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.neck, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Chest/Lungs</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.chest_lungs%></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Chest/Lungs', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.chest_lungs, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Heart</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.heart %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Heart', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.heart, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Breast</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.breast %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Breast', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.breast, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Abdomen</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.abdomen %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Abdomen', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.abdomen, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Gut</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.gut %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Gut', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.gut, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Extremities</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.extremities %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Extremities', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.extremities, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Musculoskeletal</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.musculoskeletal %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Musculoskeletal', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.musculoskeletal, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Neurological</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.neurological %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Neurological', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.neurological, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Skin</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.skin %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Skin', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.skin, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Others</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.others %></span>
-      </div>
-    </div>
-    <hr class='mb-7'>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Complete Blood Count</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.complete_blood_count %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Urinalysis</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.urinalysis %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Fecalysis</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.fecalysis %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Chest X-ray</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.chest_xray %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Fasting Blood Sugar</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.fasting_blood_sugar %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Lipid Profile</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.lipid_profile %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Blood Uric Acid</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.blood_uric_acid %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">ECG 12-leads</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.ecg_12_leads %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Drug Test</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.drug_test %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Sputum GeneXpert</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.sputum_genexpert %></span>
-      </div>
-    </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Others</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.others_1 %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Others', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.others, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <hr class='mb-7'>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Diagnosis</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.diagnosis %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Complete Blood Count', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.complete_blood_count, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Plan</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.plan %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Urinalysis', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.urinalysis, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
-    <div class="row mb-7">
-      <label class="col-lg-4 fw-semibold text-muted">Distric Phyisician</label>
-      <div class="col-lg-8">
-        <span class="fw-bold fs-6 text-gray-800"><%= physical_examination.district_physician %></span>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Fecalysis', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.fecalysis, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Chest X-ray', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.chest_xray, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Fasting Blood Sugar', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.fasting_blood_sugar, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Lipid Profile', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.lipid_profile, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Blood Uric Acid', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.blood_uric_acid, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'ECG 12-leads', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.ecg_12_leads, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Drug Test', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.drug_test, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Sputum GeneXpert', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.sputum_genexpert, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Others', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.others_1, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <hr class='mb-7'>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Diagnosis', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.diagnosis, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Plan', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.plan, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class='row mb-7'>
+      <%= content_tag :label, 'Distric Physician', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class='col-lg-8'>
+        <%= content_tag :span, physical_examination.district_physician, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
   </div>

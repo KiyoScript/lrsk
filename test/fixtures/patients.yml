@@ -5,7 +5,15 @@ one:
   birthdate: 2024-03-24
   age: 1
   gender: 1
-  details: 
+  length: 85.0
+  body_circumference: 97.0
+  muac: 38.0
+  head_circumference: 10.0
+  hip: 11.0
+  limbs: 68.0
+  z_score: '86'
+  address_line: 'Brgy. Linao'
+  contact_number: '09630534512'
   user: one
 
 two:
@@ -13,5 +21,13 @@ two:
   birthdate: 2024-03-24
   age: 1
   gender: 1
-  details: 
+  length: 65.3
+  body_circumference: 97.0
+  muac: 42.4
+  head_circumference: 12.0
+  hip: 8.2
+  limbs: 87.2
+  z_score: '55'
+  address_line: 'Brgy. Tambulilid'
+  contact_number: '09630534512'
   user: two
