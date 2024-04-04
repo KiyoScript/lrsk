@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header border-0 pt-6">
-    <div class="card-title d-flex justify-content-between w-100">
+    <div class="card-title d-flex justify-content-between w-100 flex-column flex-sm-row gap-2">
       <div class="d-flex align-items-center position-relative my-1">
         <span class="svg-icon svg-icon-1 position-absolute ms-6">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -13,10 +13,16 @@
         <% end %>
       </div>
 
-      <%= link_to new_dashboard_patient_path, class: 'btn btn-primary btn-sm' do %>
-        <%= bootstrap_icon 'person-add', class: 'mb-1', width: 20%>
-        <span class='d-none d-sm-inline'>Add Patient</span>
-      <% end %>
+      <div class="d-flex align-items-center justify-content-center gap-2">
+        <%= link_to new_dashboard_patient_path, class: 'btn btn-primary btn-sm' do %>
+          <%= bootstrap_icon 'person-add', class: 'mb-1', width: 20 %>
+          <span class='d-none d-sm-inline'>Add Patient</span>
+        <% end %>
+        <%= link_to dashboard_patients_path(format: 'csv'), class: 'btn btn-success btn-sm' do %>
+          <%= bootstrap_icon 'file-earmark-arrow-down', class: 'mb-1', width: 20 %>
+          <span class='d-none d-sm-inline'>Export</span>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="card-body py-4">

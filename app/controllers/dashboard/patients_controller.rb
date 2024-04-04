@@ -3,8 +3,15 @@ class Dashboard::PatientsController < ApplicationController
   before_action :set_patient
 
   def index
-    @filtered_patients = Patient.ransack(params[:q])
-    @pagy, @patients = pagy(@filtered_patients.result.order(created_at: :desc), items: 10)
+    respond_to  do |format|
+      format.html {
+        @filtered_patients = Patient.ransack(params[:q])
+        @pagy, @patients = pagy(@filtered_patients.result.order(created_at: :desc), items: 10)
+      }
+      format.csv {
+        send_data Patient.to_csv, filename: "Patients-#{DateTime.now.strftime("%d%m%Y%H%M")}.csv"
+      }
+    end
   end
 
 

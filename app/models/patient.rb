@@ -1,4 +1,6 @@
 class Patient < ApplicationRecord
+  require 'csv'
+
   belongs_to :user
   has_many :consults, dependent: :destroy
   has_many :physical_examinations, dependent: :destroy
@@ -18,5 +20,16 @@ class Patient < ApplicationRecord
 
   def self.ransackable_attributes(auth_object = nil)
     [ "fullname" ]
+  end
+
+  def self.to_csv
+    attributes = %w{ fullname age gender length body_circumference muac head_circumference hip limbs z_score address_line contact_number }
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |patient|
+        csv << attributes.map{ |attr| patient.send(attr) }
+      end
+    end
   end
 end
