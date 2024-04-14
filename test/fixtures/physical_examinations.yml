@@ -32,6 +32,8 @@ one:
   plan: MyText
   district_physician: MyString
   date: 2024-03-25
+  patient: one
+
 
 two:
   right_eye: false
@@ -65,3 +67,4 @@ two:
   plan: MyText
   district_physician: MyString
   date: 2024-03-25
+  patient: one

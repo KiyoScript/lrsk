@@ -1,8 +1,31 @@
-require "test_helper"
+require 'test_helper'
 
-class HomeControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get home_index_url
+class WelcomeControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @staff_user = users(:staff)
+    @admin_user = users(:administrator)
+    @unregistered_user = users(:unregistered)
+  end
+  test 'public user should redirect to the sign in page' do
+    get welcome_path
+    assert_redirected_to new_user_session_path
+  end
+
+  test 'staff user should be able to access the welcome page' do
+    sign_in @staff_user
+    get welcome_path
+    assert_response :success
+  end
+
+  test 'administrator user should be able to access the welcome page' do
+    sign_in @admin_user
+    get welcome_path
+    assert_response :success
+  end
+
+  test 'unregistered user should be able to access the welcome page' do
+    sign_in @unregistered_user
+    get welcome_path
     assert_response :success
   end
 end

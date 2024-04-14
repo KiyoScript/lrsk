@@ -31,6 +31,6 @@ Patient.create!(
   head_circumference: 10.0,
   hip: 11.0,
   limbs: 68.0,
-  z_score: "86"
+  z_score: "86",
   user_id: 1
 )

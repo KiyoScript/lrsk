@@ -14,7 +14,7 @@ one:
   z_score: '86'
   address_line: 'Brgy. Linao'
   contact_number: '09630534512'
-  user: one
+  user: staff
 
 two:
   fullname: MyString
@@ -30,4 +30,4 @@ two:
   z_score: '55'
   address_line: 'Brgy. Tambulilid'
   contact_number: '09630534512'
-  user: two
+  user: staff

@@ -8,8 +8,8 @@ module ActiveSupport
     parallelize(workers: :number_of_processors)
 
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    include Devise::Test::IntegrationHelpers
     fixtures :all
-
     # Add more helper methods to be used by all tests here...
   end
 end
