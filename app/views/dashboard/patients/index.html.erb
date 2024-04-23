@@ -9,7 +9,7 @@
           </svg>
         </span>
         <%= search_form_for @filtered_patients, url: dashboard_patients_path, class: "d-flex alignitems-center position-relative me-2" do |form| %>
-          <%= form.search_field :fullname_cont, data_kt_user_table_filter:'search', class: "form-control form-control-solid w-250px ps-14", placeholder: "Search User", autocomplete: "off" %>
+          <%= form.search_field :fullname_cont, data_kt_user_table_filter:'search', class: "form-control form-control-solid w-250px ps-14", placeholder: "Search Patients", autocomplete: "off" %>
         <% end %>
       </div>
 
@@ -36,7 +36,7 @@
                   ID
                 </div>
               </th>
-              <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="User: activate to sort column ascending" style="width: 194.391px;">User</th>
+              <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="User: activate to sort column ascending" style="width: 194.391px;">Patients</th>
               <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 125px;">Address</th>
               <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 125px;">Age</th>
               <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="Gender: activate to sort column ascending" style="width: 125px;">Gender</th>
