@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 
   has_one_attached :avatar, dependent: :destroy
-  has_many :patients
+  has_many :patients, dependent: :destroy
 
 
   enum role: { unregistered: 0, staff: 1, administrator: 2 }
