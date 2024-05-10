@@ -76,7 +76,8 @@
   </div>
 
 
-  <div class='col-12 text-end'>
+  <div class="col-12 d-flex align-items-center justify-content-between mt-4">
+    <%= link_to 'Cancel', dashboard_patient_path(@consult.patient), class: 'btn btn-light me-3' %>
     <%= consults_form.submit 'Save', class: 'btn btn-primary'%>
   </div>
 <% end %>

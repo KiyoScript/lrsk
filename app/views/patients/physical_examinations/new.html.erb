@@ -11,7 +11,8 @@
     <span class="me-4">Both Eyes:</span><%= physical_examinations_form.radio_button :both_eyes, 'uncorrected', class: 'form-check-input' %>
   </div>
   <div class="col-12 mb-7">
-    <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'><span class='badge badge-light-primary'>Yes</span> if Normal otherwise leave it blank and please input the <span class='badge badge-light-danger'>abnormal findings </span>
+    <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'><span class='badge badge-light-primary'>Yes</span>
+      if Normal otherwise <span class='badge badge-light-danger'>No</span> and please input the <span class='badge badge-light-danger'>abnormal findings </span>
     </strong>
     <div class="row">
       <hr class='mb-7'>
@@ -25,135 +26,169 @@
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="heent" class='form-label'>HEENT:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :heent, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :heent, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :heent, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :heent, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :heent, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="neck" class='form-label'>NECK:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :neck, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :neck, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :neck, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :neck, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :neck, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="chest-lungs" class='form-label'>CHEST/LUNGS:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :chest_lungs, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :chest_lungs, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :chest_lungs, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :chest_lungs, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :chest_lungs, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="heart" class='form-label'>HEART:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :heart, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :heart, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :heart, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :heart, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :heart, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="breast" class='form-label'>BREAST:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :breast, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :breast, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :breast, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :breast, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :breast, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="abdomen" class='form-label'>ABDOMEN:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :abdomen, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :abdomen, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :abdomen, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :abdomen, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :abdomen, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="gut" class='form-label'>GUT:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :gut, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :gut, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :gut, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :gut, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :gut, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="extremities" class='form-label'>EXTREMITIES:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :extremities, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :extremities, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :extremities, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :extremities, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :extremities, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="musculoskeletal" class='form-label'>MUSCULOSKELETAL:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :musculoskeletal, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :musculoskeletal, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :musculoskeletal, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :musculoskeletal, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :musculoskeletal, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="neurological" class='form-label'>NEUROLOGICAL:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :neurological, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :neurological, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :neurological, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :neurological, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :neurological, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="skin" class='form-label'>SKIN:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :skin, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :skin, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :skin, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :skin, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :skin, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
@@ -162,139 +197,172 @@
         <label for="others" class='form-label'>OTHERS:</label>
       </div>
       <div class="col-8">
-        <%= physical_examinations_form.text_field :others, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :others, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
       </div>
     </div>
     <hr>
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="complete-blood-count" class='form-label'>Complete Blood Count:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :complete_blood_count, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :complete_blood_count, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :complete_blood_count, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :complete_blood_count, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :complete_blood_count, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="urinalysis" class='form-label'>Urinalysis:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :urinalysis, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :urinalysis, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :urinalysis, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :urinalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :urinalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="fecalysis" class='form-label'>Fecalysis:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :fecalysis, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :fecalysis, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :fecalysis, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :fecalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :fecalysis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="chest_xray" class='form-label'>Chest X-ray:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :chest_xray, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :chest_xray, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :chest_xray, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :chest_xray, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :chest_xray, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="fasting-blood-sugar" class='form-label'>Fasting Blood Sugar:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :fasting_blood_sugar, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :fasting_blood_sugar, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :fasting_blood_sugar, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :fasting_blood_sugar, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :fasting_blood_sugar, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="lipid-profile" class='form-label'>Lipid Profile:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :lipid_profile, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :lipid_profile, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :lipid_profile, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :lipid_profile, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :lipid_profile, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="blood-uric-acid" class='form-label'>Blood Uric Acid:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :blood_uric_acid, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :blood_uric_acid, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :blood_uric_acid, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :blood_uric_acid, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :blood_uric_acid, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="acg-12-leads" class='form-label'>ECG 12-leads:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :ecg_12_leads, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :ecg_12_leads, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :ecg_12_leads, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :ecg_12_leads, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :ecg_12_leads, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="drug-test" class='form-label'>Drug Test:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :drug_test, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :drug_test, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :drug_test, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :drug_test, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :drug_test, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="sputum-genexpert" class='form-label'>Sputum GeneXpert:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :sputum_genexpert, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :sputum_genexpert, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :sputum_genexpert, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :sputum_genexpert, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :sputum_genexpert, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-7" data-controller='physical-examination'>
       <div class="col-4">
         <label for="hbsag" class='form-label'>HBsAg:</label>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.select :hbsag, ['', 'Yes'], {}, class: 'form-select' %>
+        <div class="mt-4 d-flex align-items-center justify-content-start gap-4">
+          <%= physical_examinations_form.radio_button :hbsag, 'yes', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> Yes
+          <%= physical_examinations_form.radio_button :hbsag, 'no', class: 'form-check-input', data: { target: 'physical-examination.radio', action: 'change->physical-examination#toggleTextarea' } %> No
+        </div>
       </div>
       <div class="col-4">
-        <%= physical_examinations_form.text_field :hbsag, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :hbsag, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2', data: { target: 'physical-examination.textarea' } %>
       </div>
     </div>
 
@@ -303,7 +371,7 @@
         <label for="others_1" class='form-label'>Others:</label>
       </div>
       <div class="col-8">
-        <%= physical_examinations_form.text_field :others_1, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :others_1, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
       </div>
     </div>
     <hr class='my-4'>
@@ -312,7 +380,7 @@
         <label for="diagnosis" class='form-label'><strong>DIAGNOSIS:</strong></label>
       </div>
       <div class="col-8">
-        <%= physical_examinations_form.text_field :diagnosis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :diagnosis, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
       </div>
     </div>
 
@@ -321,7 +389,7 @@
         <label for="plan" class='form-label'><strong>PLAN:</strong></label>
       </div>
       <div class="col-8">
-        <%= physical_examinations_form.text_field :plan, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
+        <%= physical_examinations_form.text_area :plan, class: 'form-control border-top-0 border-end-0 border-start-0 border-bottom-2'%>
       </div>
     </div>
 
@@ -334,15 +402,16 @@
       </div>
     </div>
 
-    <div class="row mb-7">
+    <div class="row mb-20">
       <div class="col-4">
         <label for="date" class='form-label'><strong>Date:</strong></label>
       </div>
       <div class="col-8">
-        <%= physical_examinations_form.date_field :date, class: 'form-control' %>
+        <%= physical_examinations_form.date_field :date, class: 'form-control', value: Time.now %>
       </div>
     </div>
-    <div class="col-12 text-end">
+    <div class="col-12 d-flex align-items-center justify-content-between mt-4">
+      <%= link_to 'Cancel', dashboard_patient_path(@physical_examination.patient), class: 'btn btn-light me-3' %>
       <%= physical_examinations_form.submit 'Save', class: 'btn btn-primary' %>
     </div>
   </div>
