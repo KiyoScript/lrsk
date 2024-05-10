@@ -73,4 +73,5 @@ gem 'bootstrap-icons-helper'
 gem 'devise', '~> 4.9'
 gem 'ransack'
 gem 'pagy'
+gem 'sablon'
 gem 'dockerfile-rails', '>= 1.6', :group => :development
