@@ -63,7 +63,9 @@ class Dashboard::PatientsController < ApplicationController
     params.require(:patient)
       .permit(
         :user_id,
-        :fullname,
+        :firstname,
+        :middle_initial,
+        :lastname,
         :birthdate,
         :age,
         :gender,

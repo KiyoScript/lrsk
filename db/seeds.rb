@@ -19,7 +19,9 @@ User.create!(
 )
 
 Patient.create!(
-  fullname: 'Arnel Jocosol',
+  firstname: 'Arnel',
+  middle_initial: 'A.',
+  lastname: 'Jocosol',
   birthdate: DateTime.now,
   age: 20,
   gender: 'male',

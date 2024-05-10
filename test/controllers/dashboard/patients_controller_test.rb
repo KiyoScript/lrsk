@@ -36,7 +36,9 @@ class Dashboard::PatientsControllerTest < ActionDispatch::IntegrationTest
       post dashboard_patients_url, params: {
         patient: {
           user_id: @patient.user_id,
-          fullname: @patient.fullname,
+          firstname: @patient.firstname,
+          middle_initial: @patient.middle_initial,
+          lastname: @patient.lastname,
           birthdate: @patient.birthdate,
           age: @patient.age,
           gender: @patient.gender,
@@ -55,7 +57,9 @@ class Dashboard::PatientsControllerTest < ActionDispatch::IntegrationTest
       post dashboard_patients_url, params: {
         patient: {
           user_id: @patient.user_id,
-          fullname: @patient.fullname,
+          firstname: @patient.firstname,
+          middle_initial: @patient.middle_initial,
+          lastname: @patient.lastname,
           birthdate: @patient.birthdate,
           age: @patient.age,
           gender: @patient.gender,
@@ -71,7 +75,9 @@ class Dashboard::PatientsControllerTest < ActionDispatch::IntegrationTest
       post dashboard_patients_url, params: {
         patient: {
           user_id: @patient.user_id,
-          fullname: @patient.fullname,
+          firstname: @patient.firstname,
+          middle_initial: @patient.middle_initial,
+          lastname: @patient.lastname,
           birthdate: @patient.birthdate,
           age: @patient.age,
           gender: @patient.gender,
@@ -118,18 +124,34 @@ class Dashboard::PatientsControllerTest < ActionDispatch::IntegrationTest
 
   test 'As a staff user, I should able to update patient' do
     sign_in @staff
-    patch dashboard_patient_url(@patient), params: { patient: { fullname: @patient.fullname } }
+    patch dashboard_patient_url(@patient), params: {
+      patient: {
+        firstname: @patient.firstname,
+        middle_initial: @patient.middle_initial,
+        lastname: @patient.lastname
+      }
+    }
     assert_redirected_to dashboard_patient_url(@patient)
   end
 
   test 'As an admin user, I should able to update patient' do
     sign_in @admin
-    patch dashboard_patient_url(@patient), params: { patient: { fullname: @patient.fullname } }
+    patch dashboard_patient_url(@patient), params: {
+      patient: {
+        firstname: @patient.firstname,
+        middle_initial: @patient.middle_initial,
+        lastname: @patient.lastname
+      }
+    }
     assert_redirected_to dashboard_patient_url(@patient)
   end
 
   test 'As unauthorized user, I should not able to update patient' do
-    patch dashboard_patient_url(@patient), params: { patient: { fullname: @patient.fullname } }
+    patch dashboard_patient_url(@patient), params: {
+      firstname: @patient.firstname,
+      middle_initial: @patient.middle_initial,
+      lastname: @patient.lastname
+    }
     assert_response :redirect
   end
 

@@ -8,7 +8,6 @@ module ApplicationHelper
   }.freeze
 
   GENDER_BADGE_CLASS = {
-    "prefer_not_to_answer" => "badge badge-light",
     "female" => "badge badge-light-warning",
     "male" => "badge badge-light-primary"
   }.freeze
@@ -19,7 +18,7 @@ module ApplicationHelper
   end
 
   def gender_badge(gender)
-    badge_class = GENDER_BADGE_CLASS[gender] || GENDER_BADGE_CLASS["prefer_not_to_answer"]
+    badge_class = GENDER_BADGE_CLASS[gender] || GENDER_BADGE_CLASS["female"]
     content_tag(:span, gender.capitalize, class: badge_class)
   end
 

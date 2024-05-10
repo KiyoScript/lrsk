@@ -4,7 +4,7 @@
       <div class='col-12'>
         <div class='card shadow-sm'>
           <div class='card-header collapsible cursor-pointer rotate' data-bs-toggle='collapse' data-bs-target='#kt_docs_card_collapsible'>
-            <h3 class='card-title'><strong>New Patient</strong></h3>
+            <h3 class='card-title fs-1'><strong>New Patient</strong></h3>
             <div class='card-toolbar rotate-180'>
               <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
             </div>
@@ -18,8 +18,9 @@
       </div>
     </div>
   </div>
-  <div class='text-end mt-4'>
-    <%= form.submit 'Add Patient', class: 'btn btn-primary btn-sm' %>
+  <div class="col-12 d-flex align-items-center justify-content-between mt-4">
+    <%= link_to 'Cancel', dashboard_patients_path, class: 'btn btn-light btn-sm fs-3' %>
+    <%= form.submit 'Save', class: 'btn btn-primary btn-sm fs-3'%>
   </div>
 <% end %>
 

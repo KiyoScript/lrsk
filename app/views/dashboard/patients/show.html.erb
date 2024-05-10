@@ -107,7 +107,7 @@
         </div>
       </div>
     <% else %>
-      <%= render partial: 'dashboard/patients/consult', collection: @patient.consults, as: :consult %>
+      <%= render partial: 'dashboard/patients/consult', collection: @patient.consults.order(created_at: :desc), as: :consult %>
     <% end %>
   </div>
   <div class="tab-pane fade show" id="kt_tab_pane_3" role="tabpanel">
@@ -129,7 +129,7 @@
         </div>
       </div>
     <% else %>
-      <%= render partial: 'dashboard/patients/physical_examination', collection: @patient.physical_examinations, as: :physical_examination %>
+      <%= render partial: 'dashboard/patients/physical_examination', collection: @patient.physical_examinations.order(created_at: :desc), as: :physical_examination %>
     <% end %>
   </div>
 </div>

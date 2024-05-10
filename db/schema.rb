@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_31_025537) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_10_053041) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -62,7 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_31_025537) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "fullname"
     t.date "birthdate"
     t.integer "age"
     t.integer "gender"
@@ -78,6 +77,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_31_025537) do
     t.string "z_score"
     t.string "address_line"
     t.string "contact_number"
+    t.string "firstname"
+    t.string "middle_initial"
+    t.string "lastname"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
