@@ -5,6 +5,16 @@ class Patients::ConsultsController < ApplicationController
     @consult = @patient.consults.new
   end
 
+  def show
+    @consult = Consult.find_by_id(params[:id])
+    respond_to do |format|
+      format.docx {
+        filename = "#{@consult.patient.fullname}-consultation-form#{@consult.date}.docx"
+        send_data Consult::DocxTemplate.new(@consult).generate, filename: filename
+      }
+    end
+  end
+
   def create
     @consult = @patient.consults.new(consult_params)
     respond_to do |format|
