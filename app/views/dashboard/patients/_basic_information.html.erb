@@ -27,12 +27,54 @@
     <%= content_tag :label, 'Contact #', class: 'col-lg-4 fw-semibold text-muted' %>
     <div class='col-lg-8'>
       <%= content_tag :span, patient.contact_number, class: 'fw-bold fs-6 text-gray-800' %>
-    </div> 
+    </div>
   </div>
   <div class='row mb-7'>
     <%= content_tag :label, 'Address', class: 'col-lg-4 fw-semibold text-muted' %>
     <div class='col-lg-8'>
       <%= content_tag :span, patient.address_line, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'Temperature', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.temperature, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'Blood Pressure', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.blood_pressure, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'Heart Rate', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.heart_rate, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'SPO2', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.spo_2, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'Weight', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.weight, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'Height', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.height, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class="row mb-7">
+    <%= content_tag :label, 'Body Mass Index (BMI)', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class="col-lg-8">
+      <%= content_tag :span, patient.bmi, class: 'fw-bold fs-6 text-gray-800' %>
     </div>
   </div>
   <div class='row mb-7'>

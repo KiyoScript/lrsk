@@ -9,22 +9,20 @@ class Consult::DocxTemplate
     template_path = Rails.root.join('lib', 'docx_template', 'consultation_template.docx')
     template = Sablon.template(File.expand_path(template_path))
 
-
-
     context = {
       consult: {
         "date" => @consult.date.strftime("%b %d, %Y"),
         "time" => @consult.time.strftime("%I:%M %p"),
         "reason" => @consult.reason,
         "s" => @consult.s,
-        "blood_pressure" => @consult.blood_pressure,
-        "heart_rate" => @consult.heart_rate,
+        "blood_pressure" => @consult.patient.blood_pressure,
+        "heart_rate" => @consult.patient.heart_rate,
         "rr" => @consult.rr,
-        "temperature" => @consult.temperature,
-        "spo_2" => @consult.spo_2,
-        "weight" => @consult.weight,
-        "height" => @consult.height,
-        "bmi" => @consult.bmi,
+        "temperature" => @consult.patient.temperature,
+        "spo_2" => @consult.patient.spo_2,
+        "weight" => @consult.patient.weight,
+        "height" => @consult.patient.height,
+        "bmi" => @consult.patient.bmi,
         "o" => @consult.o,
         "a" => @consult.a,
         "p" => @consult.p,

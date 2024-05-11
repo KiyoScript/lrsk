@@ -1,5 +1,5 @@
 <h1 class='mb-7'>New Consult</h1>
-<%= form_with model: @consult, url: patients_consults_path(id: @consult.patient.id), method: :post,  html: { class: 'row', data: { controller: 'bmi-calculator' } } do |consults_form| %>
+<%= form_with model: @consult, url: patients_consults_path(id: @consult.patient.id), method: :post,  html: { class: 'row' } do |consults_form| %>
   <div class='col-12 mb-7'>
     <%= consults_form.label 'Date of Consult:', class: 'form-label fs-3' %>
     <%= consults_form.date_field :date, class: 'form-control fs-3', value: Time.now %>
@@ -21,43 +21,8 @@
   </div>
 
   <div class='col-12 mb-7'>
-    <%= consults_form.label 'Blood Pressure:', class: 'form-label fs-3' %>
-    <%= consults_form.text_field :blood_pressure, class: 'form-control fs-3', placeholder: '120/60', required: true %>
-  </div>
-
-  <div class='col-12 mb-7'>
-    <%= consults_form.label 'Heart Rate:', class: 'form-label fs-3' %>
-    <%= consults_form.number_field :heart_rate, class: 'form-control fs-3', min: 0, placeholder: '86', required: true %>
-  </div>
-
-  <div class='col-12 mb-7'>
     <%= consults_form.label 'RR:', class: 'form-label fs-3' %>
     <%= consults_form.text_field :rr, class: 'form-control fs-3', required: true %>
-  </div>
-
-  <div class='col-12 mb-7'>
-    <%= consults_form.label 'Temperature:', class: 'form-label fs-3' %>
-    <%= consults_form.number_field :temperature, class: 'form-control fs-3', step: '0.1', required: true  %>
-  </div>
-
-  <div class='col-12 mb-7'>
-    <%= consults_form.label 'SPO2:', class: 'form-label fs-3' %>
-    <%= consults_form.text_field :spo_2, class: 'form-control fs-3', required: true %>
-  </div>
-
-  <div class='col-12 mb-7'>
-    <%= consults_form.label 'Weight:', class: 'form-label fs-3' %>
-    <%= consults_form.number_field :weight, class: 'form-control fs-3', step: '0.1', placeholder: '70 kilograms', data: { target: 'bmi-calculator.weight' }, required: true  %>
-  </div>
-
-  <div class='col-12 mb-7'>
-    <%= consults_form.label 'Height:', class: 'form-label fs-3' %>
-    <%= consults_form.number_field :height, class: 'form-control fs-3', step: '0.1', placeholder: '180 inches', data: { target: 'bmi-calculator.height'}, required: true  %>
-  </div>
-
-  <div class='col-12 mb-7'>
-    <%= consults_form.label 'Body Mass Index (BMI):', class: 'form-label fs-3' %>
-    <%= consults_form.number_field :bmi, class: 'form-control fs-3', step: '0.1', data: { target: 'bmi-calculator.bmi' }, required: true %>
   </div>
 
   <div class='col-12 mb-7'>

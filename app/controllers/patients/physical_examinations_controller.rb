@@ -17,6 +17,16 @@ class Patients::PhysicalExaminationsController < ApplicationController
     end
   end
 
+  def show
+    @physical_examination = PhysicalExamination.find_by_id(params[:id])
+    respond_to do |format|
+      format.docx {
+        filename = "#{@physical_examination.patient.fullname}-Physical-Examination-form#{@physical_examination.date}.docx"
+        send_data PhysicalExamination::DocxTemplate.new(@physical_examination).generate, filename: filename
+      }
+    end
+  end
+
 
   private
   def set_patient

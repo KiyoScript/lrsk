@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_10_053041) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_11_092641) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -44,14 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_10_053041) do
     t.time "time"
     t.text "reason"
     t.text "s"
-    t.string "blood_pressure"
-    t.integer "heart_rate"
     t.text "rr"
-    t.float "temperature"
-    t.string "spo_2"
-    t.float "weight"
-    t.float "height"
-    t.float "bmi"
     t.text "o"
     t.text "a"
     t.text "p"
@@ -80,6 +73,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_10_053041) do
     t.string "firstname"
     t.string "middle_initial"
     t.string "lastname"
+    t.float "weight"
+    t.float "height"
+    t.float "bmi"
+    t.float "temperature"
+    t.string "blood_pressure"
+    t.string "spo_2"
+    t.integer "heart_rate"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 

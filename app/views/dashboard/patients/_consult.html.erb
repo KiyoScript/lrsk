@@ -5,7 +5,6 @@
       <%= content_tag :h3, consult.date.strftime("%b %d, %Y"), class: 'mt-4 badge badge-light-primary d-flex align-items-center' %>
     </div>
     <div class="card-toolbar">
-
       <%= link_to patients_consult_path(id: consult.id, format: :docx), class: "btn btn-sm btn-primary" do %>
         <%= bootstrap_icon 'download', class: 'text-white' %>
       <% end %>
@@ -31,39 +30,45 @@
       </div>
     </div>
     <div class="row mb-7">
+      <%= content_tag :label, 'Temperature', class: 'col-lg-4 fw-semibold text-muted' %>
+      <div class="col-lg-8">
+        <%= content_tag :span, consult.patient.temperature, class: 'fw-bold fs-6 text-gray-800' %>
+      </div>
+    </div>
+    <div class="row mb-7">
       <%= content_tag :label, 'Blood Pressure', class: 'col-lg-4 fw-semibold text-muted' %>
       <div class="col-lg-8">
-        <%= content_tag :span, consult.blood_pressure, class: 'fw-bold fs-6 text-gray-800' %>
+        <%= content_tag :span, consult.patient.blood_pressure, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <div class="row mb-7">
       <%= content_tag :label, 'Heart Rate', class: 'col-lg-4 fw-semibold text-muted' %>
       <div class="col-lg-8">
-        <%= content_tag :span, consult.heart_rate, class: 'fw-bold fs-6 text-gray-800' %>
+        <%= content_tag :span, consult.patient.heart_rate, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <div class="row mb-7">
       <%= content_tag :label, 'SPO2', class: 'col-lg-4 fw-semibold text-muted' %>
       <div class="col-lg-8">
-        <%= content_tag :span, consult.spo_2, class: 'fw-bold fs-6 text-gray-800' %>
+        <%= content_tag :span, consult.patient.spo_2, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <div class="row mb-7">
       <%= content_tag :label, 'Weight', class: 'col-lg-4 fw-semibold text-muted' %>
       <div class="col-lg-8">
-        <%= content_tag :span, consult.weight, class: 'fw-bold fs-6 text-gray-800' %>
+        <%= content_tag :span, consult.patient.weight, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <div class="row mb-7">
       <%= content_tag :label, 'Height', class: 'col-lg-4 fw-semibold text-muted' %>
       <div class="col-lg-8">
-        <%= content_tag :span, consult.height, class: 'fw-bold fs-6 text-gray-800' %>
+        <%= content_tag :span, consult.patient.height, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <div class="row mb-7">
       <%= content_tag :label, 'Body Mass Index (BMI)', class: 'col-lg-4 fw-semibold text-muted' %>
       <div class="col-lg-8">
-        <%= content_tag :span, consult.bmi, class: 'fw-bold fs-6 text-gray-800' %>
+        <%= content_tag :span, consult.patient.bmi, class: 'fw-bold fs-6 text-gray-800' %>
       </div>
     </div>
     <div class="row mb-7">

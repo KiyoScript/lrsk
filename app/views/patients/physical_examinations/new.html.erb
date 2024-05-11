@@ -2,13 +2,13 @@
 <%= form_with model: @physical_examination, url: patients_physical_examinations_path(id: @physical_examination.patient.id), method: :post,  html: { class: 'row '} do |physical_examinations_form| %>
   <div class="col-12 mb-7">
     <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'>Vision: Uncorrected:
-      <span class='badge badge-light-primary'>True</span> Corrected:<span class='badge badge-light-danger'>False</span>
+      <span class='badge badge-light-primary'>Uncheck</span> Corrected:<span class='badge badge-light-danger'>Check</span>
     </strong>
   </div>
-  <div class="col-12 mb-7">
-    <span class="me-4">Right Eye:</span><%= physical_examinations_form.radio_button :right_eye, 'uncorrected', class: 'form-check-input' %>
-    <span class="me-4">Left Eye:</span><%= physical_examinations_form.radio_button :left_eye, 'uncorrected', class: 'form-check-input' %>
-    <span class="me-4">Both Eyes:</span><%= physical_examinations_form.radio_button :both_eyes, 'uncorrected', class: 'form-check-input' %>
+  <div class="col-12 mb-7 d-flex align-items-center justify-content-start">
+    <span class="me-4 fs-3">Right Eye:</span> <%= physical_examinations_form.check_box :right_eye, class: 'form-check-input fs-3 me-2', value: 'uncorrected', checked: false %>
+    <span class="me-4 fs-3">Left Eye:</span><%= physical_examinations_form.check_box :left_eye, class: 'form-check-input fs-3 me-2', value: 'uncorrected', checked: false %>
+    <span class="me-4 fs-3">Both Eyes:</span><%= physical_examinations_form.check_box :both_eyes, class: 'form-check-input fs-3 me-2', value: 'uncorrected', checked: false %>
   </div>
   <div class="col-12 mb-7">
     <strong class='mb-7 notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6'><span class='badge badge-light-primary'>Yes</span>

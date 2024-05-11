@@ -4,6 +4,11 @@
       <%= content_tag :h3, 'Physical Examination Records', class: 'fw-bold mt-5 me-2' %>
       <%= content_tag :h3, physical_examination.date.strftime('%b %d, %Y'), class: 'mt-4 badge badge-light-primary d-flex align-items-center' if physical_examination.date.present? %>
     </div>
+    <div class="card-toolbar">
+      <%= link_to patients_physical_examination_path(id: physical_examination.id, format: :docx), class: "btn btn-sm btn-primary" do %>
+        <%= bootstrap_icon 'download', class: 'text-white' %>
+      <% end %>
+    </div>
   </div>
   <div class='card-body p-9'>
     <div class='row mb-7'>
