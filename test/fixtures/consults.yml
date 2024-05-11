@@ -5,14 +5,7 @@ one:
   time: 2024-03-24 05:55:55
   reason: MyText
   s: MyText
-  blood_pressure: MyString
-  heart_rate: 1
   rr: MyText
-  temperature: 1.5
-  spo_2: MyString
-  weight: 1.5
-  height: 1.5
-  bmi: 1.5
   o: MyText
   a: MyText
   p: MyText
@@ -23,14 +16,7 @@ two:
   time: 2024-03-24 05:55:55
   reason: MyText
   s: MyText
-  blood_pressure: MyString
-  heart_rate: 1
   rr: MyText
-  temperature: 1.5
-  spo_2: MyString
-  weight: 1.5
-  height: 1.5
-  bmi: 1.5
   o: MyText
   a: MyText
   p: MyText
