@@ -1,0 +1,82 @@
+<div class="card mb-5 mb-xl-10">
+  <div class="card-body pt-9 pb-0">
+    <div class="text-end">
+      <%= link_to edit_dashboard_physician_path(@physician), class: 'btn btn-sm align-self-center' do %>
+        <%= bootstrap_icon 'pencil-square', class: 'text-primary' %>
+      <% end %>
+    </div>
+    <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+      <div class="me-7 mb-4">
+        <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+          <div class="symbol-label">
+            <div class="symbol-label fs-3 bg-light-danger text-danger">
+              <%= @physician.fullname[0]%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-wrap flex-stack">
+          <div class="d-flex justify-content-between mb-2">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center mb-2">
+                <%= link_to '#', class: 'text-gray-900 text-hover-primary fs-2 fw-bold me-1' do %>
+                  <%= @physician.fullname %>
+                <% end %>
+                <button class='btn btn-sm btn-light-success fw-bold ms-2 fs-8 py-1 px-3'>Physician/Doctor</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%#
+          <div class="d-flex flex-nowrap flex-stack">
+            <div class="d-flex flex-column flex-grow-1 pe-8">
+              <div class="d-flex flex-wrap">
+                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                  <div class="d-flex align-items-center">
+                    <i class="ki-duotone ki-arrow-up fs-3 text-success me-2"><span class="path1"></span><span class="path2"></span></i>
+                    <div class="fs-2 fw-bold counted">
+                      <%= @physician.consults.count %>
+              <%#   </div>
+                  </div>
+                  <div class="fw-semibold fs-6 text-gray-500"># Consult Records</div>
+                </div>
+                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                  <div class="d-flex align-items-center">
+                    <i class="ki-duotone ki-arrow-down fs-3 text-danger me-2"><span class="path1"></span><span class="path2"></span></i>
+                    <div class="fs-2 fw-bold counted">
+                      <%= @patient.physical_examinations.count %>
+              <%#      </div>
+                  </div>
+                  <div class="fw-semibold fs-6 text-gray-500"># Physical Examinations</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+      <li class="nav-item mt-2">
+        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" data-bs-toggle="tab" href="#kt_tab_pane_1">
+          Details
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="tab-content" id="physiciansProfileContent">
+  <div class="tab-pane fade show active" id="kt_tab_pane_1" role="tabpanel">
+    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+      <div class="card-header cursor-pointer">
+        <div class="card-title m-0">
+          <h3 class="fw-bold m-0">Basic Information</h3>
+        </div>
+      </div>
+      <%= render partial: 'dashboard/physicians/basic_information', locals: { physician: @physician } %>
+    </div>
+  </div>
+</div>

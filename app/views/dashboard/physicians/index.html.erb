@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-header border-0 pt-6">
+    <div class="card-title d-flex justify-content-between w-100 flex-column flex-sm-row gap-2">
+      <div class="d-flex align-items-center position-relative my-1">
+        <span class="svg-icon svg-icon-1 position-absolute ms-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor"></rect>
+            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor"></path>
+          </svg>
+        </span>
+        <%= search_form_for @filtered_physicians, url: dashboard_physicians_path, class: "d-flex alignitems-center position-relative me-2" do |form| %>
+          <%= form.search_field :lastname_cont, data_kt_user_table_filter:'search', class: "form-control form-control-solid w-250px ps-14", placeholder: "Search Doctors", autocomplete: "off" %>
+        <% end %>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-center gap-2">
+        <%= link_to new_dashboard_physician_path, class: 'btn btn-primary btn-sm' do %>
+          <%= bootstrap_icon 'person-add', class: 'mb-1', width: 20 %>
+          <span class='d-none d-sm-inline'>Add Doctor</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body py-4">
+    <div id="kt_table_users_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+      <div class="table-responsive">
+        <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_table_users">
+          <thead>
+            <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+              <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" style="width: 27px;">
+                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                  ID
+                </div>
+              </th>
+              <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="User: activate to sort column ascending" style="width: 194.391px;">Doctors</th>
+              <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 125px;">Email</th>
+              <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="Gender: activate to sort column ascending" style="width: 125px;">Gender</th>
+              <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users" rowspan="1" colspan="1" aria-label="User: activate to sort column ascending" style="width: 194.391px;">Created at</th>
+              <th class="text-end min-w-100px sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 100px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600 fw-bold">
+            <% if @physicians.present? %>
+              <%= render partial: "dashboard/physicians/physician", collection: @physicians, as: :physician %>
+            <% else %>
+             <tr class="text-center">
+              <td class="h2 opacity-25 py-4" colspan="6">
+                <%= bootstrap_icon 'search', class: 'text-warning me-3' %> <span class="text-normal">No results found.</span>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) if @physicians.present? %>
+      </div>
+    </div>
+  </div>
+</div>

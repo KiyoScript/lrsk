@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :profile, only: %i[index update destroy]
     resources :staffs
     resources :patients
+    resources :physicians
   end
 
   namespace :patients do

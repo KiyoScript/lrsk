@@ -30,6 +30,15 @@
           <% end %>
         </div>
       <% end %>
+      <div class="menu-item py-2 w-100 <%= request.path.include?('dashboard/physicians') ? 'border-bottom bg-light' : ''%>">
+        <% if current_user.administrator? %>
+          <%= link_to dashboard_physicians_path, class: 'menu-link text-hover-primary d-flex flex-column' do %>
+            <span class="menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Physicians">
+              <%= bootstrap_icon 'person-hearts', width: '40' %>
+            </span>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto">
       &nbsp;

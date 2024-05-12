@@ -40,13 +40,10 @@ class Dashboard::StaffsControllerTest < ActionDispatch::IntegrationTest
     assert :redirect
   end
 
-  test 'As an Staff User I should able to update other staff' do
+  test 'As an Staff User I should not be able to update other staff' do
     sign_in @staff
     patch dashboard_staff_path(@staff), params: { user: { firstname: 'New firstname', lastname: 'New lastname' } }
-    assert :success
-    @staff.reload
-    assert_equal 'New firstname', @staff.firstname
-    assert_equal 'New lastname', @staff.lastname
+    assert :redirect
   end
 
   test 'As an Admin User I should able to update other staff' do
@@ -63,9 +60,9 @@ class Dashboard::StaffsControllerTest < ActionDispatch::IntegrationTest
     assert :redirect
   end
 
-  test 'As a staff user, I should able to destroy staff' do
+  test 'As a staff user, I should not able to destroy staff' do
     sign_in @staff
-    assert_difference('User.count', -1) do
+    assert_no_difference('User.count', -1) do
       delete dashboard_staff_path(@staff)
     end
   end

@@ -398,7 +398,12 @@
         <label for="district-physician" class='form-label fs-3'><strong>District Physician:</strong></label>
       </div>
       <div class="col-8">
-        <%= physical_examinations_form.text_field :district_physician, class: 'form-control fs-3 border-top-0 border-end-0 border-start-0 border-bottom-2', required: true %>
+        <% @physicians.each do |physician| %>
+          <div class="form-check">
+            <%= physical_examinations_form.radio_button :district_physician, physician.fullname, class: 'form-check-input' %>
+            <%= label_tag :district_physician, physician.fullname, class: 'form-check-label fs-3' %>
+          </div>
+        <% end %>
       </div>
     </div>
 

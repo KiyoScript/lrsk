@@ -1,0 +1,26 @@
+<div class='card-body p-9'>
+  <div class='row mb-7'>
+    <%= content_tag :label, 'Full Name', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class='col-lg-8'>
+      <%= content_tag :span, physician.fullname, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class='row mb-7'>
+    <%= content_tag :label, 'Gender', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class='col-lg-8'>
+      <%= content_tag :span, gender_badge(physician.gender), class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class='row mb-7'>
+    <%= content_tag :label, 'Email Address', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class='col-lg-8'>
+      <%= content_tag :span, physician.email_address, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+  <div class='row mb-7'>
+    <%= content_tag :label, 'Contact #', class: 'col-lg-4 fw-semibold text-muted' %>
+    <div class='col-lg-8'>
+      <%= content_tag :span, physician.contact_number, class: 'fw-bold fs-6 text-gray-800' %>
+    </div>
+  </div>
+</div>
