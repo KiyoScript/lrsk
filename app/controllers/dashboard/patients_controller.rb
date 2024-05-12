@@ -1,6 +1,8 @@
 class Dashboard::PatientsController < ApplicationController
-  include StaffAccessible
+  before_action :authenticate_user!
+  before_action :set_policy!
   before_action :set_patient
+
 
   def index
     respond_to  do |format|
@@ -86,5 +88,8 @@ class Dashboard::PatientsController < ApplicationController
         :limbs,
         :z_score
       )
+  end
+  def set_policy!
+    authorize User, policy_class: Dashboard::PatientsPolicy
   end
 end

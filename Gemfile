@@ -74,4 +74,5 @@ gem 'devise', '~> 4.9'
 gem 'ransack'
 gem 'pagy'
 gem 'sablon'
+gem 'pundit', '~> 2.3'
 gem 'dockerfile-rails', '>= 1.6', :group => :development
