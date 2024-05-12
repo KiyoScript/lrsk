@@ -5,13 +5,13 @@
       <%= image_tag("welcome.svg", class: "img-fluid") %>
     </div>
     <% unless current_user.administrator? || current_user.staff? %>
-      <h1 class="fw-bolder fs-2qx text-gray-800 mb-7">Linao Reecord Keeping Web-based System</h1>
+      <h1 class="fw-bolder fs-2qx text-gray-800 mb-7">Linao Record Keeping Web-based System</h1>
       <div class="fw-bold fs-3 text-muted mb-15">
           Kindly wait for the administrator to accept your account.<br>
           Thank you.
       </div>
     <% else %>
-      <h1 class="fw-bolder fs-2qx text-gray-800 mb-7">Linao Reecord Keeping Web-based System</h1>
+      <h1 class="fw-bolder fs-2qx text-gray-800 mb-7">Linao Record Keeping Web-based System</h1>
       <div class="fw-bold fs-3 text-muted mb-15">
         Hello there, <%= current_user.firstname.present? ? current_user.firstname : staff_username(current_user) %><br>
       </div>
