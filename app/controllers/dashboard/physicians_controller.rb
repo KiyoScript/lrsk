@@ -1,5 +1,6 @@
 class Dashboard::PhysiciansController < ApplicationController
-  include AdminAccessible
+  before_action :authenticate_user!
+  before_action :set_policy!
   before_action :set_physician
 
   def index
@@ -67,5 +68,9 @@ class Dashboard::PhysiciansController < ApplicationController
         :contact_number,
         :email_address
       )
+  end
+
+  def set_policy!
+    authorize User, policy_class: Dashboard::PhysiciansPolicy
   end
 end
