@@ -1,6 +1,8 @@
 class Dashboard::StaffsController < ApplicationController
-  include AdminAccessible
+  before_action :authenticate_user!
+  before_action :set_policy!
   before_action :set_user
+
 
   def index
     @filtered_users = User.ransack(params[:q])
@@ -48,5 +50,9 @@ class Dashboard::StaffsController < ApplicationController
       :email,
       :role
     )
+  end
+
+  def set_policy!
+    authorize User, policy_class: Dashboard::StaffsPolicy
   end
 end
