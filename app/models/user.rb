@@ -17,4 +17,8 @@ class User < ApplicationRecord
     [ "lastname", "firstname", "email", "gender", "role"]
   end
 
+
+  def total_patients
+    patients.count
+  end
 end
