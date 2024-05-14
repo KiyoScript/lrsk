@@ -16,7 +16,7 @@
         Hello there, <%= current_user.firstname.present? ? current_user.firstname : staff_username(current_user) %><br>
       </div>
       <div class="col-12 text-center">
-        <%= link_to 'Go to Dashboard', root_path, class: 'btn btn-primary' if current_user.administrator? %>
+        <%= link_to 'Go to Dashboard', home_path, class: 'btn btn-primary' if current_user.administrator? %>
       </div>
     <% end %>
   </div>

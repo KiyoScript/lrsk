@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
+  root to: 'welcome#index'
+
   get 'up' => 'rails/health#show', as: :rails_health_check
+  get 'home' => 'home#index'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -19,8 +23,4 @@ Rails.application.routes.draw do
     resources :consults
     resources :physical_examinations
   end
-
-  root to: 'home#index'
-
-  get 'welcome' => 'welcome#index'
 end
