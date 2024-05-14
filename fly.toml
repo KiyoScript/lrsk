@@ -11,7 +11,7 @@ console_command = '/rails/bin/rails console'
 
 [[mounts]]
   source = 'data'
-  destination = '/data'
+  destination = 'mnt/data'
 
 [http_service]
   internal_port = 3000
