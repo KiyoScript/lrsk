@@ -15,10 +15,8 @@ export default class extends Controller {
     const weight = this.weightTarget.value;
     let height = this.heightTarget.value;
 
-    height = height * 0.0254; // 1 inch is equal to 0.0254 meters
-
     if (weight && height) {
-      const bmi = (weight / (height * height)).toFixed(1);
+      const bmi = (weight / (height * height)).toFixed(2);
       this.bmiTarget.value = bmi;
     }
   }

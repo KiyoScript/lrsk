@@ -43,13 +43,13 @@
 <h4 class='card-title text-normal mb-7 fs-3'>Additional Details for Consults/Physical Examination Form</h4>
 
 <div class='col-12 mb-7'>
-  <%= form.label 'Weight:', class: 'form-label fs-3' %>
+  <%= form.label 'Weight (in kg):', class: 'form-label fs-3' %>
   <%= form.number_field :weight, class: 'form-control fs-3', step: '0.1', placeholder: '70 kilograms', data: { target: 'bmi-calculator.weight' }, required: true  %>
 </div>
 
 <div class='col-12 mb-7'>
-  <%= form.label 'Height:', class: 'form-label fs-3' %>
-  <%= form.number_field :height, class: 'form-control fs-3', step: '0.1', placeholder: '180 inches', data: { target: 'bmi-calculator.height'}, required: true  %>
+  <%= form.label 'Height (in meters):', class: 'form-label fs-3' %>
+  <%= form.number_field :height, class: 'form-control fs-3', step: '0.1', placeholder: '1.8 meters', data: { target: 'bmi-calculator.height'}, required: true  %>
 </div>
 
 <div class='col-12 mb-7'>
