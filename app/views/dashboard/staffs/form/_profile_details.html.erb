@@ -25,11 +25,6 @@
     <%= f.select :role, User.roles.keys.map { |key| [key.humanize, key] }, { }, class: 'form-select', id: 'role' %>
   </div>
 
-  <div class="mb-3">
-    <%= f.label :password, class: "required fs-6 fw-bold mb-2" %>
-    <%= f.password_field :password, class: 'form-control' %>
-  </siv>
-
   <div class="mt-4 align-self-end">
     <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
