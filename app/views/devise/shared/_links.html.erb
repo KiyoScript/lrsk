@@ -1,7 +1,7 @@
 <%- if controller_name == 'passwords' %>
-  <p class="text-decoration-none mt-2 ms-3 text-normal">
+  <p class="text-decoration-none mt-2 ms-3 text-normal fs-3">
     Don’t have an account yet?
-    <%= link_to "Create an Account!", new_registration_path(resource_name), class: 'mt-2 text-normal' %>
+    <%= link_to "Create an Account!", new_registration_path(resource_name), class: 'mt-2 text-normal fs-3' %>
   </p>
 <% end %>
 
@@ -10,9 +10,9 @@
 <% end %>
 
 <%- if controller_name != 'sessions' %>
-  <p class="text-decoration-none mt-2 ms-3 text-normal">
+  <p class="text-decoration-none mt-2 ms-3 text-normal fs-3">
     Already have an account?
-    <%= link_to "Sign in here", new_session_path(resource_name), class: 'mt-2 text-primary' %><br />
+    <%= link_to "Sign in", new_session_path(resource_name), class: 'mt-2 text-primary fs-3' %><br />
   </p>
 <% end %>
 
@@ -21,9 +21,9 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' && controller_name != 'passwords'%>
-  <p class="text-decoration-none mt-2 ms-3 text-normal">
+  <p class="text-decoration-none mt-2 ms-3 text-normal fs-3">
       Don’t have an account yet?
-    <%= link_to "Sign up here", new_registration_path(resource_name), class: 'mt-2 text-normal' %>
+    <%= link_to "Sign up", new_registration_path(resource_name), class: 'mt-2 text-normal fs-3' %>
   </p>
 <% end %>
 

@@ -10,29 +10,38 @@
             <h1 class='text-primary mb-4 d-block d-lg-none'>Linao Record Keeping System</h1>
             <div class="logo d-flex align-items-center justify-content-center gap-4 mt-4 mt-lg-0">
               <%#= image_tag("logo.png", class: "img-fluid", style: "width: 4rem") %>
-              <h2 class="mb-0 text-dark">Sign up</h2>
+              <h1 class="mb-0 text-dark">Sign up</h1>
             </div>
           </div>
         </div>
         <div class="col-12">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'd-flex flex-column gap-4 mt-4', novalidate: true, data: { controller: 'sign-up-form', turbo: false }}) do |f| %>
             <div class="form-group">
-              <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "staff@gmail.com", class: "form-control", required: true %>
+              <%= f.label :email, class: 'form-label fs-3' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "staff@gmail.com", class: "form-control fs-3", required: true %>
               <div class="invalid-feedback">Invalid email</div>
             </div>
             <div class="form-group">
-              <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "new-password",placeholder: "*************", class: "form-control", required: true %>
+              <%= f.label :password, class: 'form-label fs-3' %>
+              <%= f.password_field :password, autocomplete: "new-password",placeholder: "*************", class: "form-control fs-3", required: true %>
               <div class="invalid-feedback">Minimum of 6 characters</div>
             </div>
             <div class="form-group">
-              <%= f.label :password_confirmation %>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "*************", class: "form-control", required: true %>
+              <%= f.label :password_confirmation, class: 'form-label fs-3' %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "*************", class: "form-control fs-3", required: true %>
               <div class="invalid-feedback">Password confirmation doesn't match</div>
             </div>
             <div class="form-group">
-              <%= f.submit "Sign Up", class: "btn btn-primary btn-block w-100" %>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" required="true"/>
+                <label class="form-check-label fs-5" for="checkbox">By Signing up, you agree to the
+                  <%= link_to 'Terms of Service', terms_of_services_path, target: '_blank' %> and
+                  <%= link_to 'Privacy Policy', privacy_policy_path, target: '_blank' %>.
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.submit "Sign Up", class: "btn btn-primary btn-block w-100 fs-3" %>
             </div>
           <% end %>
           <hr>

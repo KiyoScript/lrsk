@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'up' => 'rails/health#show', as: :rails_health_check
   get 'home' => 'home#index'
+  get 'terms_of_services' => 'terms_of_service#index'
+  get 'privacy_policy' => 'privacy_policy#index'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
