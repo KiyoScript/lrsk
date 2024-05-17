@@ -44,32 +44,32 @@
 
 <div class='col-12 mb-7'>
   <%= form.label 'Weight (in kg):', class: 'form-label fs-3' %>
-  <%= form.number_field :weight, class: 'form-control fs-3', step: '0.1', placeholder: '70 kilograms', data: { target: 'bmi-calculator.weight' }, required: true  %>
+  <%= form.number_field :weight, class: 'form-control fs-3', step: '0.1', placeholder: '70 kilograms', data: { target: 'bmi-calculator.weight' }  %>
 </div>
 
 <div class='col-12 mb-7'>
   <%= form.label 'Height (in meters):', class: 'form-label fs-3' %>
-  <%= form.number_field :height, class: 'form-control fs-3', step: '0.1', placeholder: '1.8 meters', data: { target: 'bmi-calculator.height'}, required: true  %>
+  <%= form.number_field :height, class: 'form-control fs-3', step: '0.1', placeholder: '1.8 meters', data: { target: 'bmi-calculator.height'}  %>
 </div>
 
 <div class='col-12 mb-7'>
   <%= form.label 'Body Mass Index (BMI):', class: 'form-label fs-3' %>
-  <%= form.number_field :bmi, class: 'form-control fs-3', step: '0.1', data: { target: 'bmi-calculator.bmi' }, required: true %>
+  <%= form.number_field :bmi, class: 'form-control fs-3', step: '0.1', data: { target: 'bmi-calculator.bmi' } %>
 </div>
 
 <div class='col-12 mb-7'>
   <%= form.label 'Blood Pressure:', class: 'form-label fs-3' %>
-  <%= form.text_field :blood_pressure, class: 'form-control fs-3', placeholder: '120/60', required: true %>
+  <%= form.text_field :blood_pressure, class: 'form-control fs-3', placeholder: '120/60' %>
 </div>
 
 <div class='col-12 mb-7'>
   <%= form.label 'Temperature:', class: 'form-label fs-3' %>
-  <%= form.number_field :temperature, class: 'form-control fs-3', step: '0.1', required: true, placeholder: '35 °C'  %>
+  <%= form.number_field :temperature, class: 'form-control fs-3', step: '0.1', placeholder: '35 °C'  %>
 </div>
 
 <div class='col-12 mb-7'>
   <%= form.label 'Heart Rate:', class: 'form-label fs-3' %>
-  <%= form.number_field :heart_rate, class: 'form-control fs-3', min: 0, placeholder: '86', required: true %>
+  <%= form.number_field :heart_rate, class: 'form-control fs-3', min: 0, placeholder: '86' %>
 </div>
 
 <div class='col-12 mb-7'>
