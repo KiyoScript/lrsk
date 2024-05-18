@@ -1,0 +1,32 @@
+<div class='col-12 mb-7'>
+  <label for="email_address" class="form-label fs-3">Email Address: </label>
+  <%= form.text_field :email_address, class: 'form-control fs-3', placeholder: 'johnlloyddesape@gmail.com' %>
+</div>
+
+<div class='col-12 mb-7'>
+  <label for="firstname" class="form-label fs-3">First Name: </label>
+  <%= form.text_field :firstname, class: 'form-control fs-3', placeholder: 'John Lloyd' %>
+</div>
+
+<div class='col-12 mb-7'>
+  <label for="middle_initial" class="form-label fs-3">Middle Initial: </label>
+  <%= form.text_field :middle_initial, class: 'form-control fs-3', placeholder: 'D.' %>
+</div>
+
+<div class='col-12 mb-7'>
+  <label for="lastname" class="form-label fs-3">Last Name: </label>
+  <%= form.text_field :lastname, class: 'form-control fs-3', placeholder: 'de Sape' %>
+</div>
+
+
+<div class='col-12 mb-7'>
+  <%= form.label 'Gender:', class: 'form-label fs-3'%>
+  <% Physician.genders.keys.each do |key| %>
+    <%= form.radio_button :gender, key, class: 'ms-5 form-check-input fs-3'%> <%= key.humanize %>
+  <% end %>
+</div>
+
+<div class='col-12 mb-7'>
+  <%= form.label 'Contact Number: ', class: 'form-label fs-3'%>
+  <%= form.text_field :contact_number, class: 'form-control fs-3', placeholder: '(+63) 9612337412'%>
+</div>
