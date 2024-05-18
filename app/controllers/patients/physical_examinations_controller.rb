@@ -4,7 +4,6 @@ class Patients::PhysicalExaminationsController < ApplicationController
 
   def new
     @physical_examination = @patient.physical_examinations.new
-    @physicians = @patient.user.physicians
   end
 
   def create

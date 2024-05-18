@@ -398,7 +398,7 @@
         <label for="district-physician" class='form-label fs-3'><strong>District Physician:</strong></label>
       </div>
       <div class="col-8">
-        <% @physicians.each do |physician| %>
+        <% Physician.all.each do |physician| %>
           <div class="form-check">
             <%= physical_examinations_form.radio_button :district_physician, physician.fullname, class: 'form-check-input' %>
             <%= label_tag :district_physician, physician.fullname, class: 'form-check-label fs-3' %>
