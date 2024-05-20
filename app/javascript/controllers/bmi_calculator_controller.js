@@ -16,7 +16,7 @@ export default class extends Controller {
     let height = this.heightTarget.value;
 
     if (weight && height) {
-      const bmi = (weight / (height * height)).toFixed(2);
+      const bmi = (weight / (height * height)).toFixed(1);
       this.bmiTarget.value = bmi;
     }
   }
