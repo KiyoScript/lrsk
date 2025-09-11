@@ -1,9 +1,22 @@
 # See https://git-scm.com/docs/gitattributes for more about git attribute files.
 
-# Mark the database schema as having been generated.
+# Mark database schema as generated (don’t count toward stats)
 db/schema.rb linguist-generated
 
-# Mark any vendored files as having been vendored.
-vendor/* linguist-vendored
+# Mark encrypted credentials as binary/credentials
 config/credentials/*.yml.enc diff=rails_credentials
 config/credentials.yml.enc diff=rails_credentials
+
+# Mark any vendored files as vendored (don’t count toward stats)
+vendor/**/* linguist-vendored
+node_modules/**/* linguist-vendored
+
+# Ignore Rails asset pipeline files from stats
+app/assets/**/* linguist-vendored
+public/assets/**/* linguist-vendored
+
+# Ignore Rails views (HTML/ERB templates)
+app/views/**/* linguist-vendored
+
+# Explicitly tell Linguist that Ruby is the main language
+*.rb linguist-language=Ruby
